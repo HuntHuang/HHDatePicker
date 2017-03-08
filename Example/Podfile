@@ -1,0 +1,12 @@
+use_frameworks!
+
+target 'HHDatePickerView_Example' do
+  pod 'HHDatePickerView', :path => '../'
+
+  target 'HHDatePickerView_Tests' do
+    inherit! :search_paths
+
+    pod 'Specta'
+  pod 'Expecta'
+  end
+end
