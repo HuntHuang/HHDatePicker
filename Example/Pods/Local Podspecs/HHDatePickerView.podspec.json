@@ -3,16 +3,16 @@
   "version": "0.1.0",
   "summary": "A short description of HHDatePickerView.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/EX-HUANGZHIHANG001/HHDatePickerView",
+  "homepage": "https://github.com/HuntHuang/",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "EX-HUANGZHIHANG001": "369691320@qq.com"
+    "HuntHuang": "369691320@qq.com"
   },
   "source": {
-    "git": "https://github.com/EX-HUANGZHIHANG001/HHDatePickerView.git",
+    "git": "https://github.com/HuntHuang/HHDatePicker.git",
     "tag": "0.1.0"
   },
   "platforms": {
