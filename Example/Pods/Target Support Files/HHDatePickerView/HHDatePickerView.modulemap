@@ -1,0 +1,6 @@
+framework module HHDatePickerView {
+  umbrella header "HHDatePickerView-umbrella.h"
+
+  export *
+  module * { export * }
+}
