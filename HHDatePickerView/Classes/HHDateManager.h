@@ -47,6 +47,11 @@
 
 @end
 
+@interface MonthAndDayManager : HHDateManager
+
+
+@end
+
 @interface OnlyYearManager : HHDateManager
 
 

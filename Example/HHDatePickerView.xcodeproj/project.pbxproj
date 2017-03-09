@@ -37,8 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		16E57B219E3AB271E71C074E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		1DA586112424BC05263AC900 /* HHDatePickerView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = HHDatePickerView.podspec; path = ../HHDatePickerView.podspec; sourceTree = "<group>"; };
+		16E57B219E3AB271E71C074E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		1DA586112424BC05263AC900 /* HHDatePickerView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HHDatePickerView.podspec; path = ../HHDatePickerView.podspec; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* HHDatePickerView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HHDatePickerView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -66,7 +66,7 @@
 		D708F2A85C703EE03C59A7D6 /* Pods-HHDatePickerView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHDatePickerView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HHDatePickerView_Example/Pods-HHDatePickerView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E42CC57B1C4E393FC2EFE500 /* Pods-HHDatePickerView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHDatePickerView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HHDatePickerView_Tests/Pods-HHDatePickerView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F9715EA8F3B7984A7C82A75C /* Pods-HHDatePickerView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHDatePickerView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HHDatePickerView_Tests/Pods-HHDatePickerView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		FEFD33CF34B19075B42B2CE2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		FEFD33CF34B19075B42B2CE2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +250,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "EX-HUANGZHIHANG001";
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = KK5A4ESWW9;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -524,12 +527,14 @@
 			baseConfigurationReference = D708F2A85C703EE03C59A7D6 /* Pods-HHDatePickerView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KK5A4ESWW9;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HHDatePickerView/HHDatePickerView-Prefix.pch";
 				INFOPLIST_FILE = "HHDatePickerView/HHDatePickerView-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -539,12 +544,14 @@
 			baseConfigurationReference = A69AB693171C526A578A819D /* Pods-HHDatePickerView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = KK5A4ESWW9;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HHDatePickerView/HHDatePickerView-Prefix.pch";
 				INFOPLIST_FILE = "HHDatePickerView/HHDatePickerView-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

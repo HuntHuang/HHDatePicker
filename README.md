@@ -1,6 +1,6 @@
 # HHDatePickerView
 
-[![CI Status](http://img.shields.io/travis/EX-HUANGZHIHANG001/HHDatePickerView.svg?style=flat)](https://travis-ci.org/EX-HUANGZHIHANG001/HHDatePickerView)
+[![CI Status](http://img.shields.io/travis/EX-HUANGZHIHANG001/HHDatePickerView.svg?style=flat)](https://travis-ci.org/Hunt/HHDatePickerView)
 [![Version](https://img.shields.io/cocoapods/v/HHDatePickerView.svg?style=flat)](http://cocoapods.org/pods/HHDatePickerView)
 [![License](https://img.shields.io/cocoapods/l/HHDatePickerView.svg?style=flat)](http://cocoapods.org/pods/HHDatePickerView)
 [![Platform](https://img.shields.io/cocoapods/p/HHDatePickerView.svg?style=flat)](http://cocoapods.org/pods/HHDatePickerView)
@@ -22,7 +22,7 @@ pod "HHDatePickerView"
 
 ## Author
 
-EX-HUANGZHIHANG001, 369691320@qq.com
+Hunt, 369691320@qq.com
 
 ## License
 
