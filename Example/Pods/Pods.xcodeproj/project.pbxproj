@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		01F278A54C85C2C865DDAD4090C559B6 /* EXPDoubleTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = E8899DDCDB159906296A77EA9F670B8C /* EXPDoubleTuple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0B11B174B2ADC6056A89A3EBE624151D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECEA2EDA41473899EE391CA038EDC38 /* XCTest.framework */; };
-		0C3F403F5E12D21BB355D37C5D85C9BA /* HHDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D30FD5A2B5A112ACD814CA5059A905AB /* HHDatePickerView.m */; };
 		0E86BBA3A65849769B47995A5E91C881 /* Expecta-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D6BE4E35D0AA9FEFC1DA27890CBA2A19 /* Expecta-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F9F1642CF5AD16354D1851A2800A7E4 /* NSDate+HHDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CA433579253A2C1EEBF2498257CC6E98 /* NSDate+HHDateFormatter.m */; };
 		1009851D0C0B3FCBC574C414CC4D31B0 /* EXPMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A21F86A69C9F106AA92ADFA3CD7C46C /* EXPMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		105B55687E3630C399C7ADC822AF592D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF21EF8268E32D359CD23F2CF3EFE3 /* Foundation.framework */; };
 		120C4A01D6D149E4DAA6468BA0430099 /* SPTCallSite.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D23EA9CCB1E421678FACAC3D02921A8 /* SPTCallSite.m */; };
@@ -20,21 +20,22 @@
 		185B7A93191CD95A2689F9CC600F5713 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF21EF8268E32D359CD23F2CF3EFE3 /* Foundation.framework */; };
 		1D676445A1446539D4B722E6EF0C802A /* ExpectaSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 924BF15B0F1D99CAD6E46F0030F50C50 /* ExpectaSupport.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		214F8D721940BD9AA4BAB0E5AE2E8A1C /* EXPBlockDefinedMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 04D6221AD6AD261B601F9711E749A5D5 /* EXPBlockDefinedMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22D4445AD18C290FCB8F0114FC93E8B1 /* HHDatePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = B5A7CD6EA780EAB1B13FE4EC57E0E09B /* HHDatePickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		248131EC67CA01A9C20C1FDB37A900CA /* SpectaTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 51F8C648CB722FE51238487FAECC1517 /* SpectaTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		285C6F6BE59E632CB219CD98B4EDC1AA /* EXPMatchers+endWith.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B01F350337B25F09061F55C2252CBD6 /* EXPMatchers+endWith.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2916D75F69E777954F5BF46AE63C52C0 /* EXPMatchers+beSubclassOf.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACF80B5A24CE07B6C736EEF474E7E9C /* EXPMatchers+beSubclassOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2953D687B0A16D0D75BBC7A8D51337B9 /* NSDate+HHDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 57A24B5C9023C83CDC8FA79316609846 /* NSDate+HHDateFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30358A7F14A2CFB819A142EEE5DC268A /* SPTTestSuite.h in Headers */ = {isa = PBXBuildFile; fileRef = AEF01BA5773CAF9B2F6768A5AEB29504 /* SPTTestSuite.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		31DB585BB0C1353919EE36F10810D873 /* HHDateManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 86BFEBE219CA8E066C1F7D5C62660430 /* HHDateManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3550079869CB91B39976382379E58543 /* Specta.h in Headers */ = {isa = PBXBuildFile; fileRef = D61BC75AB795DFB7AE9CF80D79C1B530 /* Specta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		361B58CE2A28E03CA83A73617ED739F2 /* EXPMatchers+raise.m in Sources */ = {isa = PBXBuildFile; fileRef = A125E7E80B5C2A367F184455B08495B1 /* EXPMatchers+raise.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		39461DAB3DE2637F4AE2BA94F19DCF2B /* EXPDoubleTuple.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5EBB318D16AE6EC1958DC8510C228D /* EXPDoubleTuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3B29CDF29989D0133DE3ACD99D56AE19 /* NSDate+HHDateFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EE9CA95A0E1313C7D5A30D5778EFEF3 /* NSDate+HHDateFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3D1C615E741E95E2199E36C47AFE618A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF21EF8268E32D359CD23F2CF3EFE3 /* Foundation.framework */; };
-		412BE0BC874B019322BF1EBF26F8F157 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF21EF8268E32D359CD23F2CF3EFE3 /* Foundation.framework */; };
+		3F67538BDEE2882CECEB24C0D1A996E8 /* HHDatePickerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DCD965BA95A05590A7290F83DB4215E /* HHDatePickerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41CC214541946B82A25CE427BB81ABEA /* EXPMatchers+beKindOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 186D37D789BDC5806713AC08D0BD0452 /* EXPMatchers+beKindOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		425C4DFD1FAB011D70F825631144BC4C /* EXPMatchers+equal.h in Headers */ = {isa = PBXBuildFile; fileRef = FBF30858E3C4F8F822AB008755EC09E9 /* EXPMatchers+equal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47D171E32EAE4FB61A9971B9BC00226D /* EXPMatchers+beLessThan.m in Sources */ = {isa = PBXBuildFile; fileRef = 983F42157C09B24C95033E6A987BBF22 /* EXPMatchers+beLessThan.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4861F2FFD5A4306E7B7BD3CD0D8199AC /* EXPMatchers+beCloseTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B6DF8F89EC26F944197244B9F2AAB15 /* EXPMatchers+beCloseTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4ABD4E661A1277ED51B0580809EFE75E /* HHDateManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A7C4395552025AE6D919B62D015DAA1D /* HHDateManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4CA4F8F64565882DCFA174872749C0EF /* EXPFloatTuple.h in Headers */ = {isa = PBXBuildFile; fileRef = 17B271C769948413B2D6A2FA5FA661F5 /* EXPFloatTuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E3667E8406C40D28429778A9D8839B3 /* SpectaDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FF67CD313329AC05B39AE251B5EA5BB /* SpectaDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		508B6D0572C0C3B4A3E019B814595D4A /* EXPMatchers+beInTheRangeOf.m in Sources */ = {isa = PBXBuildFile; fileRef = ED05564542683A1E240E5097EC7B86DC /* EXPMatchers+beInTheRangeOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -48,23 +49,24 @@
 		5E4F55D319FF771D658CCE335E7CB498 /* EXPFloatTuple.m in Sources */ = {isa = PBXBuildFile; fileRef = DC4CBA4D2825ED03DE841CB750862190 /* EXPFloatTuple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5F160713BF583BCBC136CE95E62F9C2F /* EXPMatchers+beInstanceOf.h in Headers */ = {isa = PBXBuildFile; fileRef = A31DB2F213B606BBB124F2A6D10D8417 /* EXPMatchers+beInstanceOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60CD83FA1B2BF6E93B59834C1E0CBEF0 /* EXPUnsupportedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BE369528DB94DD9FD6880DCFAAAAB69 /* EXPUnsupportedObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		62547B909C4939D8C7BCCA41C4DA48C1 /* HHDatePickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = F3A440C19A8CCA931E52797F7DD9F1B8 /* HHDatePickerView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63E1D6582F7C57F7BC8C46C5D196270C /* SPTCompiledExample.h in Headers */ = {isa = PBXBuildFile; fileRef = CDCE1E6823C0AC6058E1F677318C1D0F /* SPTCompiledExample.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		64C46AF200F2347115A0DF2799D6E403 /* EXPMatchers+beNil.h in Headers */ = {isa = PBXBuildFile; fileRef = 87A19FC30FAE97EDA655018A6AD2D54F /* EXPMatchers+beNil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6C8E90AF24113A9A7A3438AE27DBB27A /* SPTExampleGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = E4286F5B187014B00F18766782F7018D /* SPTExampleGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DF2BCAC9CB404195358C135335DF5F7 /* SPTExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 8130E2C24D57D446CB02B745DEBFDB68 /* SPTExample.m */; };
-		6E78ACD0B7EC9376F7E218A059226680 /* HHDatePickerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C92C779FB751F40FF9A3CCD4E1343B /* HHDatePickerView-dummy.m */; };
 		6E935E5B1DC5632094CAC2CF18201C50 /* SPTTestSuite.m in Sources */ = {isa = PBXBuildFile; fileRef = 113855CF66A69F6876546E978AC2362E /* SPTTestSuite.m */; };
 		76556597FBF20788D6C5C6D8EB0C1E24 /* Pods-HHDatePickerView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 689F3BEC0814F7DB04A4A952AE761437 /* Pods-HHDatePickerView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		778C9F1A1715E05313578E39AB46726E /* EXPMatchers+beInstanceOf.m in Sources */ = {isa = PBXBuildFile; fileRef = DF5966F05CD1198629BF447653497239 /* EXPMatchers+beInstanceOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7E52F76D0ABB72B21912F706F288A014 /* HHDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A05984F32F54C5A3D167CE3B5AA8D /* HHDateModel.m */; };
 		7E81176499F06E523CE3039B08AB5051 /* EXPMatchers+beGreaterThan.h in Headers */ = {isa = PBXBuildFile; fileRef = B3BBEA8D0E2B46A33A73346032F24AAA /* EXPMatchers+beGreaterThan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8220368E5F7EA70947BAD2B6F216C61B /* EXPMatchers+beFalsy.m in Sources */ = {isa = PBXBuildFile; fileRef = E156AF9341293266845AA8774ED518EA /* EXPMatchers+beFalsy.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		82A4D9C4B6F0C7C59D14322A4BC45276 /* HHDateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBAEA933D2D8609E7FFA0CB4B06C87F /* HHDateManager.m */; };
 		870CAAA15357EFF9E1619737DEE56067 /* EXPMatchers+raiseWithReason.m in Sources */ = {isa = PBXBuildFile; fileRef = CDC92BECE41FDD487136814173CB1558 /* EXPMatchers+raiseWithReason.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		87AE70A44BD8E8676B2A3EDB6E334138 /* EXPMatchers+endWith.h in Headers */ = {isa = PBXBuildFile; fileRef = 177EE8E7DD8C4226F8E15FE4C447154D /* EXPMatchers+endWith.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A58D476E93CC3550984C00AC056045A /* XCTestCase+Specta.h in Headers */ = {isa = PBXBuildFile; fileRef = C2D5F98443188468F5CFE556EC251738 /* XCTestCase+Specta.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B0A34DADDB56E70CF4A5177E65AA081 /* ExpectaObject.h in Headers */ = {isa = PBXBuildFile; fileRef = AF080460DC05A5A144E6CAC1177FB0AC /* ExpectaObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B8C4B3E28E6FC6D26037EFC282BE4C5 /* EXPMatchers+beIdenticalTo.h in Headers */ = {isa = PBXBuildFile; fileRef = AD9A1402E8720FD00C46040083DC9692 /* EXPMatchers+beIdenticalTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C14546CF091E0A5B1F0F37F576990B8 /* EXPMatchers+beginWith.h in Headers */ = {isa = PBXBuildFile; fileRef = 79476B660CA0150E072A597FD1928591 /* EXPMatchers+beginWith.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F65F8B9785BFA47617CE4F35F38833C /* HHDateModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 880CB73380810E3E816D3DB5207602FC /* HHDateModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8F990515E868D90C15D2148DD1A22403 /* EXPMatchers+haveCountOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E20292CF7B63EA8E98399EF2352F73D /* EXPMatchers+haveCountOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91EFE2F4C6320FF3DC076334806CC3F3 /* Pods-HHDatePickerView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE06DA7C1CF98F34077917FC63863644 /* Pods-HHDatePickerView_Tests-dummy.m */; };
 		95201F3AFC5FADE3C883E7021EBDDC52 /* SpectaUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = C7A1FE2006A967BE06886C450214BDFE /* SpectaUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -93,7 +95,6 @@
 		BA0F9BB17CCE671DA63C3297D4398F3C /* SPTExample.h in Headers */ = {isa = PBXBuildFile; fileRef = 68F820C46D336F1E6EB733BFC4374C51 /* SPTExample.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BBC7D292529B7E5DB953171190E321AF /* EXPMatchers+beGreaterThanOrEqualTo.h in Headers */ = {isa = PBXBuildFile; fileRef = 592E81109E597E27A3D9DBB86ABBE590 /* EXPMatchers+beGreaterThanOrEqualTo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC530A8234C398F9F3AD1A1D41670B65 /* EXPMatchers+match.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC48829A0EB26D4DD51CD2AA4B0FE74 /* EXPMatchers+match.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		BCFD3C06ECE187A0FC1913EE69DF0F65 /* HHDateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 80089BF10E63217929655FEBF0E92A70 /* HHDateManager.m */; };
 		BFC7D32CFE8200730837306AFF61E5AD /* EXPExpect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F32E405A85135EDBCBF4765A6BB530B /* EXPExpect.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C14CD98EE4DDC0B7689F058D5B79CC47 /* EXPMatchers+beGreaterThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF861D2ADFE89409C39B6E076059DCE /* EXPMatchers+beGreaterThanOrEqualTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C1BEA1612C5D8566F5FB66660DDAE062 /* SPTGlobalBeforeAfterEach.h in Headers */ = {isa = PBXBuildFile; fileRef = D6CF3903D943792CF71D2E59A5FE6602 /* SPTGlobalBeforeAfterEach.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -102,11 +103,10 @@
 		CB99A2D7D003745153A564346DF8ABA8 /* EXPMatchers+beSubclassOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F5CF0D3894D4FC1B84CF0F527D0D766 /* EXPMatchers+beSubclassOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD22121B77F0F8E2B6A58AF6226038C2 /* EXPMatchers+beIdenticalTo.m in Sources */ = {isa = PBXBuildFile; fileRef = 279DF95762E948BE7B719A7F673E9E56 /* EXPMatchers+beIdenticalTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CD66900813CFE317343F5A4053AE73EC /* EXPMatchers+beNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B613869003A3D21F03ECEADC589822 /* EXPMatchers+beNil.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		CE256A13820342A3E90036254E4FDC49 /* HHDatePickerView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DCD965BA95A05590A7290F83DB4215E /* HHDatePickerView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE7E4C141657D23213C7FAE616D7FA75 /* EXPMatchers+beLessThanOrEqualTo.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E90BF1DB04C094A5015446308F5C85 /* EXPMatchers+beLessThanOrEqualTo.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CED239AEB4A2A0D6251091A29F44F3D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF21EF8268E32D359CD23F2CF3EFE3 /* Foundation.framework */; };
 		D1768C977F0CD5B420D1A1D2375CDBD4 /* Expecta-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3A245D75F8D2D0FFAD5230F5925974 /* Expecta-dummy.m */; };
-		D3F79F7F820DD576707C3271705DED71 /* NSDate+HHDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A1F20ABE41EDD2866D709C6A0D86BF /* NSDate+HHDateFormatter.m */; };
+		D31D7EAF1FD83F47100D7147A5DD7B5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF21EF8268E32D359CD23F2CF3EFE3 /* Foundation.framework */; };
 		D65A1C2BE0E71D243DFB4F61C4785A6E /* SPTExcludeGlobalBeforeAfterEach.h in Headers */ = {isa = PBXBuildFile; fileRef = 8002AEC214B6BB97F584715F86C953D0 /* SPTExcludeGlobalBeforeAfterEach.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D9EE69FAEF8F227FDD749656F1A2E850 /* SPTSharedExampleGroups.h in Headers */ = {isa = PBXBuildFile; fileRef = 06C1DD363D5966F42C4D802641B4CEEA /* SPTSharedExampleGroups.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB8F3665E9E382DF52E0DCB4DECE5EAE /* NSObject+Expecta.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EF2564A5B3BCF5B727F63C626FF9935 /* NSObject+Expecta.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -117,6 +117,7 @@
 		DF883524C3F35145D74166C01BCFCFC3 /* EXPMatchers+beKindOf.m in Sources */ = {isa = PBXBuildFile; fileRef = E8CC760F73E42A321D6401C619837229 /* EXPMatchers+beKindOf.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E233F5CF4BF16CFB539804C4E995C355 /* EXPMatchers+beLessThan.h in Headers */ = {isa = PBXBuildFile; fileRef = 42EC02837F7465B7AED8E1A256D57C91 /* EXPMatchers+beLessThan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E3355DB3F63F6FE79FD8DD6188B0B3A4 /* EXPMatchers+contain.h in Headers */ = {isa = PBXBuildFile; fileRef = AE94674608619558EA8DCEBE8902C148 /* EXPMatchers+contain.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4CEE302F5244E8FC850E86344E35973 /* HHDatePickerView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6C92C779FB751F40FF9A3CCD4E1343B /* HHDatePickerView-dummy.m */; };
 		E61E28B50602F353D95914765667969F /* EXPMatcherHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 27576C638FD3AB691E7F4FB1E3980464 /* EXPMatcherHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E66B437F808CDE561452A5B2D8F70B2C /* Pods-HHDatePickerView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2569F920DB02DAF7769295AD649800F8 /* Pods-HHDatePickerView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6D59CAA2A6E134A4643254406ED11F2 /* EXPMatchers+equal.m in Sources */ = {isa = PBXBuildFile; fileRef = A1000A875D63BCF2E590201DB9EE9499 /* EXPMatchers+equal.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -125,6 +126,7 @@
 		FBF3CDBC189D2F89B5A770C25B37AF71 /* SPTSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = A86483E009A2C30E3472D0609B2DBFFB /* SPTSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC223395BCEE46EB920CECD38AFD4402 /* EXPMatchers+beInTheRangeOf.h in Headers */ = {isa = PBXBuildFile; fileRef = AA2D86876643D2803FBF58BD3C0BE625 /* EXPMatchers+beInTheRangeOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FC6474103AA989EBD5368772037BE0BB /* EXPMatchers+beSupersetOf.h in Headers */ = {isa = PBXBuildFile; fileRef = 847A5C6956B4E31C6C348C18D4FDBEEA /* EXPMatchers+beSupersetOf.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD227A1618E254EFDE4B047D87BFEF19 /* HHDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 080720CFA5FA5201DF381F77F26F93B7 /* HHDatePickerView.m */; };
 		FD39ACDEA6F0B6D6DBB730547CE18BA6 /* EXPExpect.h in Headers */ = {isa = PBXBuildFile; fileRef = 67473F09A0FADF52D476EA88F48CFA54 /* EXPExpect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE9237DF4FFF7C5F8DE15A57CE813015 /* SpectaUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 7687931B86D55C2A3B7570964EEFDEAB /* SpectaUtility.m */; };
 		FF394D6FEA84206182301180AE4CB957 /* EXPMatchers+beGreaterThan.m in Sources */ = {isa = PBXBuildFile; fileRef = 91D17A7188630D4CFFDF216D1B20AD98 /* EXPMatchers+beGreaterThan.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -149,7 +151,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FA20040B1CFA6859E5D0E2ACF469B2A3;
+			remoteGlobalIDString = FADA13EEF16C27E79CD91FD328676D19;
 			remoteInfo = HHDatePickerView;
 		};
 /* End PBXContainerItemProxy section */
@@ -159,6 +161,7 @@
 		04D6221AD6AD261B601F9711E749A5D5 /* EXPBlockDefinedMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPBlockDefinedMatcher.h; path = Expecta/EXPBlockDefinedMatcher.h; sourceTree = "<group>"; };
 		057F1BE29EA149C1264097BB2A58F4DA /* Pods-HHDatePickerView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-HHDatePickerView_Tests.modulemap"; sourceTree = "<group>"; };
 		06C1DD363D5966F42C4D802641B4CEEA /* SPTSharedExampleGroups.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTSharedExampleGroups.h; path = Specta/Specta/SPTSharedExampleGroups.h; sourceTree = "<group>"; };
+		080720CFA5FA5201DF381F77F26F93B7 /* HHDatePickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HHDatePickerView.m; sourceTree = "<group>"; };
 		0D742C36417083F91C50620C170817D1 /* EXPDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPDefines.h; path = Expecta/EXPDefines.h; sourceTree = "<group>"; };
 		113855CF66A69F6876546E978AC2362E /* SPTTestSuite.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTTestSuite.m; path = Specta/Specta/SPTTestSuite.m; sourceTree = "<group>"; };
 		124408F448490BCF39CC1C2AA5297197 /* EXPMatchers+postNotification.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+postNotification.h"; path = "Expecta/Matchers/EXPMatchers+postNotification.h"; sourceTree = "<group>"; };
@@ -200,6 +203,7 @@
 		51F770E0A0B3B0D2789D92A52AD3ABAE /* EXPMatchers+conformTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+conformTo.m"; path = "Expecta/Matchers/EXPMatchers+conformTo.m"; sourceTree = "<group>"; };
 		51F8C648CB722FE51238487FAECC1517 /* SpectaTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpectaTypes.h; path = Specta/Specta/SpectaTypes.h; sourceTree = "<group>"; };
 		54371815367C40EDB52FBDB27B2DBA70 /* Expecta-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Expecta-prefix.pch"; sourceTree = "<group>"; };
+		57A24B5C9023C83CDC8FA79316609846 /* NSDate+HHDateFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSDate+HHDateFormatter.h"; sourceTree = "<group>"; };
 		592E81109E597E27A3D9DBB86ABBE590 /* EXPMatchers+beGreaterThanOrEqualTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beGreaterThanOrEqualTo.h"; path = "Expecta/Matchers/EXPMatchers+beGreaterThanOrEqualTo.h"; sourceTree = "<group>"; };
 		5B01F350337B25F09061F55C2252CBD6 /* EXPMatchers+endWith.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+endWith.m"; path = "Expecta/Matchers/EXPMatchers+endWith.m"; sourceTree = "<group>"; };
 		5BC48829A0EB26D4DD51CD2AA4B0FE74 /* EXPMatchers+match.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+match.m"; path = "Expecta/Matchers/EXPMatchers+match.m"; sourceTree = "<group>"; };
@@ -217,7 +221,9 @@
 		6916BE610A314DEC18B4623992B5044C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		695DA09C5F0B6EC3D730B2A1ADF6603A /* HHDatePickerView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = HHDatePickerView.modulemap; sourceTree = "<group>"; };
 		6A35E3BEB5498CFFDDA78D1FAA0B6CCF /* Pods-HHDatePickerView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-HHDatePickerView_Example.modulemap"; sourceTree = "<group>"; };
+		6A8A05984F32F54C5A3D167CE3B5AA8D /* HHDateModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HHDateModel.m; sourceTree = "<group>"; };
 		6C7AF85EF13157EA702F69B23441C370 /* Pods-HHDatePickerView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HHDatePickerView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		6DBAEA933D2D8609E7FFA0CB4B06C87F /* HHDateManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HHDateManager.m; sourceTree = "<group>"; };
 		704CDA1E2D73288DAC9C4FDBA881844E /* Specta-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Specta-prefix.pch"; sourceTree = "<group>"; };
 		757C0C9E04310224C838669046B5E81D /* Expecta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Expecta.framework; path = Expecta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7687931B86D55C2A3B7570964EEFDEAB /* SpectaUtility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SpectaUtility.m; path = Specta/Specta/SpectaUtility.m; sourceTree = "<group>"; };
@@ -228,13 +234,12 @@
 		7ECE72AD43155832C505F13EE17792AC /* Expecta.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Expecta.modulemap; sourceTree = "<group>"; };
 		7ED9B22EEF24C8820E91AF12236B490E /* HHDatePickerView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "HHDatePickerView-prefix.pch"; sourceTree = "<group>"; };
 		8002AEC214B6BB97F584715F86C953D0 /* SPTExcludeGlobalBeforeAfterEach.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTExcludeGlobalBeforeAfterEach.h; path = Specta/Specta/SPTExcludeGlobalBeforeAfterEach.h; sourceTree = "<group>"; };
-		80089BF10E63217929655FEBF0E92A70 /* HHDateManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HHDateManager.m; sourceTree = "<group>"; };
 		8130E2C24D57D446CB02B745DEBFDB68 /* SPTExample.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTExample.m; path = Specta/Specta/SPTExample.m; sourceTree = "<group>"; };
 		81583B46B8723B046C5B09F2EFD9961D /* HHDatePickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HHDatePickerView.framework; path = HHDatePickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82018E76DBBAA11465301FB7614DA196 /* EXPMatchers+respondTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+respondTo.h"; path = "Expecta/Matchers/EXPMatchers+respondTo.h"; sourceTree = "<group>"; };
 		847A5C6956B4E31C6C348C18D4FDBEEA /* EXPMatchers+beSupersetOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beSupersetOf.h"; path = "Expecta/Matchers/EXPMatchers+beSupersetOf.h"; sourceTree = "<group>"; };
-		86BFEBE219CA8E066C1F7D5C62660430 /* HHDateManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HHDateManager.h; sourceTree = "<group>"; };
 		87A19FC30FAE97EDA655018A6AD2D54F /* EXPMatchers+beNil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beNil.h"; path = "Expecta/Matchers/EXPMatchers+beNil.h"; sourceTree = "<group>"; };
+		880CB73380810E3E816D3DB5207602FC /* HHDateModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HHDateModel.h; sourceTree = "<group>"; };
 		882A116D3CC36902BD695CA1582B0B37 /* Pods-HHDatePickerView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HHDatePickerView_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		8BE369528DB94DD9FD6880DCFAAAAB69 /* EXPUnsupportedObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPUnsupportedObject.h; path = Expecta/EXPUnsupportedObject.h; sourceTree = "<group>"; };
 		8F95B5C76C2451627E4CB8813BBA16A6 /* Specta.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Specta.framework; path = Specta.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,7 +252,6 @@
 		958373E42A4D4D499829F5660A2E59D3 /* Pods-HHDatePickerView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HHDatePickerView_Example-dummy.m"; sourceTree = "<group>"; };
 		983F42157C09B24C95033E6A987BBF22 /* EXPMatchers+beLessThan.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beLessThan.m"; path = "Expecta/Matchers/EXPMatchers+beLessThan.m"; sourceTree = "<group>"; };
 		998914C0B5A68C9A01E1596E02564482 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9EE9CA95A0E1313C7D5A30D5778EFEF3 /* NSDate+HHDateFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSDate+HHDateFormatter.h"; sourceTree = "<group>"; };
 		9EF2564A5B3BCF5B727F63C626FF9935 /* NSObject+Expecta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+Expecta.h"; path = "Expecta/NSObject+Expecta.h"; sourceTree = "<group>"; };
 		A0E90BF1DB04C094A5015446308F5C85 /* EXPMatchers+beLessThanOrEqualTo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beLessThanOrEqualTo.m"; path = "Expecta/Matchers/EXPMatchers+beLessThanOrEqualTo.m"; sourceTree = "<group>"; };
 		A1000A875D63BCF2E590201DB9EE9499 /* EXPMatchers+equal.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+equal.m"; path = "Expecta/Matchers/EXPMatchers+equal.m"; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 		A2ABBE8261195A55ED1DFF9A59897512 /* Specta-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Specta-umbrella.h"; sourceTree = "<group>"; };
 		A31DB2F213B606BBB124F2A6D10D8417 /* EXPMatchers+beInstanceOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beInstanceOf.h"; path = "Expecta/Matchers/EXPMatchers+beInstanceOf.h"; sourceTree = "<group>"; };
 		A6D787E6DCEB2FD0A241E9FFAE3221A7 /* Pods-HHDatePickerView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HHDatePickerView_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		A7C4395552025AE6D919B62D015DAA1D /* HHDateManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HHDateManager.h; sourceTree = "<group>"; };
 		A86483E009A2C30E3472D0609B2DBFFB /* SPTSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTSpec.h; path = Specta/Specta/SPTSpec.h; sourceTree = "<group>"; };
 		AA2364F990290F821A2CB900471FBE2A /* Specta.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Specta.modulemap; sourceTree = "<group>"; };
 		AA2D86876643D2803FBF58BD3C0BE625 /* EXPMatchers+beInTheRangeOf.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beInTheRangeOf.h"; path = "Expecta/Matchers/EXPMatchers+beInTheRangeOf.h"; sourceTree = "<group>"; };
@@ -270,6 +275,7 @@
 		B320B192BAA2B7B006880B016A39AB10 /* XCTest+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "XCTest+Private.h"; path = "Specta/Specta/XCTest+Private.h"; sourceTree = "<group>"; };
 		B3BBEA8D0E2B46A33A73346032F24AAA /* EXPMatchers+beGreaterThan.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beGreaterThan.h"; path = "Expecta/Matchers/EXPMatchers+beGreaterThan.h"; sourceTree = "<group>"; };
 		B424E5B08CAAABE851C235789EE3EC6B /* ExpectaSupport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ExpectaSupport.h; path = Expecta/ExpectaSupport.h; sourceTree = "<group>"; };
+		B5A7CD6EA780EAB1B13FE4EC57E0E09B /* HHDatePickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HHDatePickerView.h; sourceTree = "<group>"; };
 		B73BF333200B097C03E6DD915E4EE605 /* Pods_HHDatePickerView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HHDatePickerView_Example.framework; path = "Pods-HHDatePickerView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC2629C6549890D1980EF1F8A4893C28 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF3CD05CED877C5E19CB18BA095BC724 /* SPTSharedExampleGroups.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SPTSharedExampleGroups.m; path = Specta/Specta/SPTSharedExampleGroups.m; sourceTree = "<group>"; };
@@ -278,10 +284,9 @@
 		C7A1FE2006A967BE06886C450214BDFE /* SpectaUtility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SpectaUtility.h; path = Specta/Specta/SpectaUtility.h; sourceTree = "<group>"; };
 		C7B5A923D27207113E5B55FE0DACDAD9 /* EXPMatchers+conformTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+conformTo.h"; path = "Expecta/Matchers/EXPMatchers+conformTo.h"; sourceTree = "<group>"; };
 		C849D7BC23725EC2DCDC9EB803322052 /* EXPMatchers+beLessThanOrEqualTo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "EXPMatchers+beLessThanOrEqualTo.h"; path = "Expecta/Matchers/EXPMatchers+beLessThanOrEqualTo.h"; sourceTree = "<group>"; };
-		C9A1F20ABE41EDD2866D709C6A0D86BF /* NSDate+HHDateFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HHDateFormatter.m"; sourceTree = "<group>"; };
+		CA433579253A2C1EEBF2498257CC6E98 /* NSDate+HHDateFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSDate+HHDateFormatter.m"; sourceTree = "<group>"; };
 		CDC92BECE41FDD487136814173CB1558 /* EXPMatchers+raiseWithReason.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+raiseWithReason.m"; path = "Expecta/Matchers/EXPMatchers+raiseWithReason.m"; sourceTree = "<group>"; };
 		CDCE1E6823C0AC6058E1F677318C1D0F /* SPTCompiledExample.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTCompiledExample.h; path = Specta/Specta/SPTCompiledExample.h; sourceTree = "<group>"; };
-		D30FD5A2B5A112ACD814CA5059A905AB /* HHDatePickerView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HHDatePickerView.m; sourceTree = "<group>"; };
 		D61BC75AB795DFB7AE9CF80D79C1B530 /* Specta.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Specta.h; path = Specta/Specta/Specta.h; sourceTree = "<group>"; };
 		D6BE4E35D0AA9FEFC1DA27890CBA2A19 /* Expecta-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Expecta-umbrella.h"; sourceTree = "<group>"; };
 		D6CF3903D943792CF71D2E59A5FE6602 /* SPTGlobalBeforeAfterEach.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SPTGlobalBeforeAfterEach.h; path = Specta/Specta/SPTGlobalBeforeAfterEach.h; sourceTree = "<group>"; };
@@ -299,7 +304,6 @@
 		E8CC760F73E42A321D6401C619837229 /* EXPMatchers+beKindOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beKindOf.m"; path = "Expecta/Matchers/EXPMatchers+beKindOf.m"; sourceTree = "<group>"; };
 		ED05564542683A1E240E5097EC7B86DC /* EXPMatchers+beInTheRangeOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+beInTheRangeOf.m"; path = "Expecta/Matchers/EXPMatchers+beInTheRangeOf.m"; sourceTree = "<group>"; };
 		F3841AF1D8E631E333341008419AF1A1 /* EXPMatchers+haveCountOf.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+haveCountOf.m"; path = "Expecta/Matchers/EXPMatchers+haveCountOf.m"; sourceTree = "<group>"; };
-		F3A440C19A8CCA931E52797F7DD9F1B8 /* HHDatePickerView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HHDatePickerView.h; sourceTree = "<group>"; };
 		F6C92C779FB751F40FF9A3CCD4E1343B /* HHDatePickerView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "HHDatePickerView-dummy.m"; sourceTree = "<group>"; };
 		F7F13BF4EE6B27258C0AEC8D395177A0 /* Pods-HHDatePickerView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HHDatePickerView_Example-frameworks.sh"; sourceTree = "<group>"; };
 		F93621A6ACD7E7A94D3214C3AE13EAFC /* Pods-HHDatePickerView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HHDatePickerView_Tests-resources.sh"; sourceTree = "<group>"; };
@@ -316,20 +320,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		795054F187E00326DD7A85344F17D3FA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				412BE0BC874B019322BF1EBF26F8F157 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		81B980FDF54E10512D67FA3FFF2AEAE5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				105B55687E3630C399C7ADC822AF592D /* Foundation.framework in Frameworks */,
 				5B5C0E6E3CD27A193D495BEAF524A838 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8705D335FFD97E3BB59574B32F3BAD30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D31D7EAF1FD83F47100D7147A5DD7B5B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,15 +424,6 @@
 				9D9CFF97A2D41D7CB20A427D5386C7A6 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4B80657A4DF1311066CD71462A9B903C /* HHDatePickerView */ = {
-			isa = PBXGroup;
-			children = (
-				EC78A86608C3FBFF8E7774AF7475F058 /* Classes */,
-			);
-			name = HHDatePickerView;
-			path = HHDatePickerView;
 			sourceTree = "<group>";
 		};
 		4DA3602D7F8FAD5F91C232D4D61D417D /* Support Files */ = {
@@ -604,11 +599,36 @@
 		9EBE0CC5CC561F4C5E2113479C40DD3D /* HHDatePickerView */ = {
 			isa = PBXGroup;
 			children = (
-				4B80657A4DF1311066CD71462A9B903C /* HHDatePickerView */,
+				D98C9EC60663B4A5346DF504B6425079 /* HHDatePickerView */,
 				E7C80E6B7475BF02819426F4632BC9B8 /* Support Files */,
 			);
 			name = HHDatePickerView;
 			path = ../..;
+			sourceTree = "<group>";
+		};
+		D87658B8E62197804891707B39D16F75 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A7C4395552025AE6D919B62D015DAA1D /* HHDateManager.h */,
+				6DBAEA933D2D8609E7FFA0CB4B06C87F /* HHDateManager.m */,
+				880CB73380810E3E816D3DB5207602FC /* HHDateModel.h */,
+				6A8A05984F32F54C5A3D167CE3B5AA8D /* HHDateModel.m */,
+				B5A7CD6EA780EAB1B13FE4EC57E0E09B /* HHDatePickerView.h */,
+				080720CFA5FA5201DF381F77F26F93B7 /* HHDatePickerView.m */,
+				57A24B5C9023C83CDC8FA79316609846 /* NSDate+HHDateFormatter.h */,
+				CA433579253A2C1EEBF2498257CC6E98 /* NSDate+HHDateFormatter.m */,
+			);
+			name = Classes;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D98C9EC60663B4A5346DF504B6425079 /* HHDatePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				D87658B8E62197804891707B39D16F75 /* Classes */,
+			);
+			name = HHDatePickerView;
+			path = HHDatePickerView;
 			sourceTree = "<group>";
 		};
 		E38C1B87E0EBB77891E334F4FFB34B90 /* Development Pods */ = {
@@ -633,20 +653,6 @@
 			path = "Example/Pods/Target Support Files/HHDatePickerView";
 			sourceTree = "<group>";
 		};
-		EC78A86608C3FBFF8E7774AF7475F058 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				86BFEBE219CA8E066C1F7D5C62660430 /* HHDateManager.h */,
-				80089BF10E63217929655FEBF0E92A70 /* HHDateManager.m */,
-				F3A440C19A8CCA931E52797F7DD9F1B8 /* HHDatePickerView.h */,
-				D30FD5A2B5A112ACD814CA5059A905AB /* HHDatePickerView.m */,
-				9EE9CA95A0E1313C7D5A30D5778EFEF3 /* NSDate+HHDateFormatter.h */,
-				C9A1F20ABE41EDD2866D709C6A0D86BF /* NSDate+HHDateFormatter.m */,
-			);
-			name = Classes;
-			path = Classes;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -663,17 +669,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				76556597FBF20788D6C5C6D8EB0C1E24 /* Pods-HHDatePickerView_Tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		74F4A5474FC96657E37103E604D8633D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				31DB585BB0C1353919EE36F10810D873 /* HHDateManager.h in Headers */,
-				CE256A13820342A3E90036254E4FDC49 /* HHDatePickerView-umbrella.h in Headers */,
-				62547B909C4939D8C7BCCA41C4DA48C1 /* HHDatePickerView.h in Headers */,
-				3B29CDF29989D0133DE3ACD99D56AE19 /* NSDate+HHDateFormatter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,6 +739,18 @@
 				30358A7F14A2CFB819A142EEE5DC268A /* SPTTestSuite.h in Headers */,
 				56870658B366BF6B6AA28FBCD9D69216 /* XCTest+Private.h in Headers */,
 				8A58D476E93CC3550984C00AC056045A /* XCTestCase+Specta.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5C29FA849DCCBD177C9D1A88BD58ED8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ABD4E661A1277ED51B0580809EFE75E /* HHDateManager.h in Headers */,
+				8F65F8B9785BFA47617CE4F35F38833C /* HHDateModel.h in Headers */,
+				3F67538BDEE2882CECEB24C0D1A996E8 /* HHDatePickerView-umbrella.h in Headers */,
+				22D4445AD18C290FCB8F0114FC93E8B1 /* HHDatePickerView.h in Headers */,
+				2953D687B0A16D0D75BBC7A8D51337B9 /* NSDate+HHDateFormatter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,13 +828,13 @@
 			productReference = 8F95B5C76C2451627E4CB8813BBA16A6 /* Specta.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		FA20040B1CFA6859E5D0E2ACF469B2A3 /* HHDatePickerView */ = {
+		FADA13EEF16C27E79CD91FD328676D19 /* HHDatePickerView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F1067BC79D4B5DEB217CD6356BBBD910 /* Build configuration list for PBXNativeTarget "HHDatePickerView" */;
+			buildConfigurationList = 924D227F4693AC21D9513559C2ABFCA7 /* Build configuration list for PBXNativeTarget "HHDatePickerView" */;
 			buildPhases = (
-				F3128A7B80A927B5DE543B043AC887A9 /* Sources */,
-				795054F187E00326DD7A85344F17D3FA /* Frameworks */,
-				74F4A5474FC96657E37103E604D8633D /* Headers */,
+				52FC6E4BB0EAAEBC51CA90B011D349C0 /* Sources */,
+				8705D335FFD97E3BB59574B32F3BAD30 /* Frameworks */,
+				E5C29FA849DCCBD177C9D1A88BD58ED8 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -860,7 +867,7 @@
 			projectRoot = "";
 			targets = (
 				5D161BA711701D7E41E02A5702FD024E /* Expecta */,
-				FA20040B1CFA6859E5D0E2ACF469B2A3 /* HHDatePickerView */,
+				FADA13EEF16C27E79CD91FD328676D19 /* HHDatePickerView */,
 				426B691E60C504136EB62F3D42FD6DA7 /* Pods-HHDatePickerView_Example */,
 				17B4B795588ACB613EC1FBA13D8788E0 /* Pods-HHDatePickerView_Tests */,
 				F36441A126EFE87BF91949DBC11738D3 /* Specta */,
@@ -892,6 +899,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				91EFE2F4C6320FF3DC076334806CC3F3 /* Pods-HHDatePickerView_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52FC6E4BB0EAAEBC51CA90B011D349C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82A4D9C4B6F0C7C59D14322A4BC45276 /* HHDateManager.m in Sources */,
+				7E52F76D0ABB72B21912F706F288A014 /* HHDateModel.m in Sources */,
+				E4CEE302F5244E8FC850E86344E35973 /* HHDatePickerView-dummy.m in Sources */,
+				FD227A1618E254EFDE4B047D87BFEF19 /* HHDatePickerView.m in Sources */,
+				0F9F1642CF5AD16354D1851A2800A7E4 /* NSDate+HHDateFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -945,24 +964,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3128A7B80A927B5DE543B043AC887A9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BCFD3C06ECE187A0FC1913EE69DF0F65 /* HHDateManager.m in Sources */,
-				6E78ACD0B7EC9376F7E218A059226680 /* HHDatePickerView-dummy.m in Sources */,
-				0C3F403F5E12D21BB355D37C5D85C9BA /* HHDatePickerView.m in Sources */,
-				D3F79F7F820DD576707C3271705DED71 /* NSDate+HHDateFormatter.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		2DA33E1432A92DAD05D725B5A218C1FC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = HHDatePickerView;
-			target = FA20040B1CFA6859E5D0E2ACF469B2A3 /* HHDatePickerView */;
+			target = FADA13EEF16C27E79CD91FD328676D19 /* HHDatePickerView */;
 			targetProxy = AE1E771AA5135430703434B3129270A1 /* PBXContainerItemProxy */;
 		};
 		9394D66DF16AD48B7BB73FFFA6225E61 /* PBXTargetDependency */ = {
@@ -1046,37 +1054,6 @@
 			};
 			name = Release;
 		};
-		3AC8B7835DDA4A48243F759B9AACA038 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3AD24BF58C5E7F602C82CC5DACCBA1CA /* HHDatePickerView.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/HHDatePickerView/HHDatePickerView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HHDatePickerView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/HHDatePickerView/HHDatePickerView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = HHDatePickerView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		3B83E9A83FF32DD32400B4C2337A9208 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3F69FDC4088201DA32282BC48A8DF8C5 /* Pods-HHDatePickerView_Tests.debug.xcconfig */;
@@ -1104,6 +1081,37 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_HHDatePickerView_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4CFC602A261F42FE3829708631C420AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AD24BF58C5E7F602C82CC5DACCBA1CA /* HHDatePickerView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/HHDatePickerView/HHDatePickerView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HHDatePickerView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HHDatePickerView/HHDatePickerView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = HHDatePickerView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1293,37 +1301,6 @@
 			};
 			name = Debug;
 		};
-		B9F6CE47E70218A59630BC3361BF2AB0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3AD24BF58C5E7F602C82CC5DACCBA1CA /* HHDatePickerView.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/HHDatePickerView/HHDatePickerView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HHDatePickerView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/HHDatePickerView/HHDatePickerView.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = HHDatePickerView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		D446ED361CE2DECD164422D491F96CDC /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6C7AF85EF13157EA702F69B23441C370 /* Pods-HHDatePickerView_Example.release.xcconfig */;
@@ -1351,6 +1328,37 @@
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_HHDatePickerView_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E3C058E0AA4481498088E3ADB671FF63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AD24BF58C5E7F602C82CC5DACCBA1CA /* HHDatePickerView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/HHDatePickerView/HHDatePickerView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HHDatePickerView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HHDatePickerView/HHDatePickerView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = HHDatePickerView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1429,20 +1437,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		924D227F4693AC21D9513559C2ABFCA7 /* Build configuration list for PBXNativeTarget "HHDatePickerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CFC602A261F42FE3829708631C420AC /* Debug */,
+				E3C058E0AA4481498088E3ADB671FF63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A8347103C59E3290700335F74FE0C22B /* Build configuration list for PBXNativeTarget "Specta" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A144A9D94CF06255C2969EAACEBE8FD9 /* Debug */,
 				5B187AB4BCB73A64E15CB28D8B0B1DDB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F1067BC79D4B5DEB217CD6356BBBD910 /* Build configuration list for PBXNativeTarget "HHDatePickerView" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B9F6CE47E70218A59630BC3361BF2AB0 /* Debug */,
-				3AC8B7835DDA4A48243F759B9AACA038 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

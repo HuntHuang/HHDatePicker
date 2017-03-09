@@ -80,8 +80,8 @@
 - (void)onClickAllDatePicker
 {
     HHDatePickerView *pickerView = [[HHDatePickerView alloc] initWithFrame:CGRectMake(0, 0, IPhoneWidth, IPhoneHeight)];
-    [pickerView showDatePickerWithYear:self.showYear month:self.showMonth day:self.showDay title:@"Please chose date" completeCallback:^(NSDictionary *dateDict) {
-        NSString *msg = [NSString stringWithFormat:@"This is what you chose: \n%@-%@-%@", dateDict[@"year"], dateDict[@"month"], dateDict[@"day"]];
+    [pickerView showDatePickerWithYear:self.showYear month:self.showMonth day:self.showDay title:@"Please chose date" completeCallback:^(HHDateModel *model) {
+        NSString *msg = [NSString stringWithFormat:@"This is what you chose: \n%@-%@-%@", model.year, model.month, model.day];
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:msg message:@"" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"style:UIAlertActionStyleDefault handler:nil];
         [alertController addAction:okAction];

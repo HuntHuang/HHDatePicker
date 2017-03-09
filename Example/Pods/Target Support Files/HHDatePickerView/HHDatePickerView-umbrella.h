@@ -3,6 +3,7 @@
 #endif
 
 #import "HHDateManager.h"
+#import "HHDateModel.h"
 #import "HHDatePickerView.h"
 #import "NSDate+HHDateFormatter.h"
 

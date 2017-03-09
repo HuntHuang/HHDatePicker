@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HHDateModel.h"
 
-typedef void (^BLOCK)(NSDictionary *dateDict);
+typedef void (^BLOCK)(HHDateModel *model);
 
 @interface HHDatePickerView : UIView
 
@@ -16,11 +17,6 @@ typedef void (^BLOCK)(NSDictionary *dateDict);
  *  block回调
  */
 @property (nonatomic, copy) BLOCK dateBlock;
-
-/**
- *  上次选中的日期
- */
-@property (nonatomic, copy) NSString *lastDate;
 
 - (void)showDatePickerWithYear:(BOOL)showYear
                          month:(BOOL)showMonth
