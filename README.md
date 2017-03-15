@@ -1,30 +1,12 @@
 # HHDatePickerView
+## 此控件可以根据用户需求输出多种日期格式
+### 可单独输出年份、月份、日份：
+[4639791-219f3d21abfecb38.gif][1]
+### 单独输出年月份：
+[4639791-d14dab5f40b52ebb.gif][2]
+### 输出全日期：
+[4639791-eea2394474756f3d.gif][3]
 
-[![CI Status](http://img.shields.io/travis/EX-HUANGZHIHANG001/HHDatePickerView.svg?style=flat)](https://travis-ci.org/Hunt/HHDatePickerView)
-[![Version](https://img.shields.io/cocoapods/v/HHDatePickerView.svg?style=flat)](http://cocoapods.org/pods/HHDatePickerView)
-[![License](https://img.shields.io/cocoapods/l/HHDatePickerView.svg?style=flat)](http://cocoapods.org/pods/HHDatePickerView)
-[![Platform](https://img.shields.io/cocoapods/p/HHDatePickerView.svg?style=flat)](http://cocoapods.org/pods/HHDatePickerView)
-
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
-
-## Installation
-
-HHDatePickerView is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod "HHDatePickerView"
-```
-
-## Author
-
-Hunt, 369691320@qq.com
-
-## License
-
-HHDatePickerView is available under the MIT license. See the LICENSE file for more info.
-# HHDatePicker
+[1]:	http://upload-images.jianshu.io/upload_images/4639791-219f3d21abfecb38.gif?imageMogr2/auto-orient/strip "4639791-219f3d21abfecb38.gif"
+[2]:	http://upload-images.jianshu.io/upload_images/4639791-d14dab5f40b52ebb.gif?imageMogr2/auto-orient/strip "4639791-d14dab5f40b52ebb.gif"
+[3]:	http://upload-images.jianshu.io/upload_images/4639791-eea2394474756f3d.gif?imageMogr2/auto-orient/strip "4639791-eea2394474756f3d.gif"
