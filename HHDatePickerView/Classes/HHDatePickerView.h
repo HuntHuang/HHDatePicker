@@ -13,9 +13,6 @@ typedef void (^BLOCK)(HHDateModel *model);
 
 @interface HHDatePickerView : UIView
 
-/**
- *  block回调
- */
 @property (nonatomic, copy) BLOCK dateBlock;
 
 - (void)showDatePickerWithYear:(BOOL)showYear
@@ -23,5 +20,8 @@ typedef void (^BLOCK)(HHDateModel *model);
                            day:(BOOL)showDay
                          title:(NSString *)title
               completeCallback:(BLOCK)completeCallback;
+
+- (void)showCustomDatePickerWithCompleteCallback:(BLOCK)completeCallback;
+
 
 @end
