@@ -79,24 +79,34 @@
 
 - (void)onClickAllDatePicker
 {
-    HHDatePickerView *pickerView = [[HHDatePickerView alloc] initWithFrame:CGRectMake(0, 0, IPhoneWidth, IPhoneHeight)];
-//    [pickerView showCustomDatePickerWithCompleteCallback:^(HHDateModel *model) {
-//        NSString *msg = [NSString stringWithFormat:@"This is what you chose: \n%@-%@-%@", model.year, model.month, model.day];
-//        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:msg message:@"" preferredStyle:UIAlertControllerStyleAlert];
-//        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"style:UIAlertActionStyleDefault handler:nil];
-//        [alertController addAction:okAction];
-//        [self presentViewController:alertController animated:YES completion:nil];
-//    }];
-//    [self.view addSubview:pickerView];
-
-    [pickerView showDatePickerWithYear:self.showYear month:self.showMonth day:self.showDay title:@"Please chose date" completeCallback:^(HHDateModel *model) {
-        NSString *msg = [NSString stringWithFormat:@"This is what you chose: \n%@-%@-%@", model.year, model.month, model.day];
+    NSString *msg = nil;
+    if (self.showYear && self.showDay && self.showMonth == NO)
+    {
+        msg = @"请选择正确的格式";
+    }
+    else if (self.showYear == NO && self.showMonth == NO && self.showDay == NO)
+    {
+        msg = @"请打开开关";
+    }
+    if (msg != nil)
+    {
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:msg message:@"" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"style:UIAlertActionStyleDefault handler:nil];
         [alertController addAction:okAction];
         [self presentViewController:alertController animated:YES completion:nil];
-    }];
-    [self.view addSubview:pickerView];
+    }
+    else
+    {
+        HHDatePickerView *pickerView = [[HHDatePickerView alloc] initWithFrame:CGRectMake(0, 0, IPhoneWidth, IPhoneHeight)];
+        [pickerView showDatePickerWithYear:self.showYear month:self.showMonth day:self.showDay title:@"请选择日期" completeCallback:^(HHDateModel *model) {
+            NSString *msg = [NSString stringWithFormat:@"这是你选择的日期: \n%@-%@-%@", model.year, model.month, model.day];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:msg message:@"" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"style:UIAlertActionStyleDefault handler:nil];
+            [alertController addAction:okAction];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }];
+        [self.view addSubview:pickerView];
+    }
 }
 
 @end

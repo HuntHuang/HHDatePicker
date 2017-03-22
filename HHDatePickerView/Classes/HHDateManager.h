@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "HHDateModel.h"
 
 @interface HHDateManager : NSObject
 
@@ -18,6 +19,10 @@
 @property (nonatomic, copy) NSString *year;
 @property (nonatomic, copy) NSString *month;
 @property (nonatomic, copy) NSString *day;
+
+@property (nonatomic, assign) NSInteger yearRow;
+@property (nonatomic, assign) NSInteger monthRow;
+@property (nonatomic, assign) NSInteger dayRow;
 
 + (HHDateManager *)configModelWithYear:(BOOL)showYear
                                  month:(BOOL)showMonth
@@ -37,7 +42,7 @@
 - (NSString *)pickerViewTitleForRow:(NSInteger)row forComponent:(NSInteger)component;
 
 // 所选择的数据
-- (void)pickerViewdidSelectRow:(NSInteger)row inComponent:(NSInteger)component;
+- (void)pickerViewdidSelectRow:(NSInteger)row inComponent:(NSInteger)component inView:(UIPickerView *)pickerView;
 
 // 获取年份
 - (NSString *)getYearNumberStringWithCurSelDate:(NSDate *)date;
@@ -48,28 +53,25 @@
 // 获取日份
 - (NSString *)getDayNumberStringWithCurSelDate:(NSDate *)date;
 
+- (HHDateModel *)getDateModelWithCurSelDate:(NSDate *)date;
 @end
 
-@interface YearAndMonthManager : HHDateManager
-
-@end
-
-@interface MonthAndDayManager : HHDateManager
+@interface HHYearAndMonthManager : HHDateManager
 
 @end
 
-@interface OnlyYearManager : HHDateManager
+@interface HHMonthAndDayManager : HHDateManager
 
 @end
 
-@interface OnlyMonthManager : HHDateManager
+@interface HHOnlyYearManager : HHDateManager
 
 @end
 
-@interface OnlyDayManager : HHDateManager
+@interface HHOnlyMonthManager : HHDateManager
 
 @end
 
-@interface CustomDateManager : HHDateManager
+@interface HHOnlyDayManager : HHDateManager
 
 @end

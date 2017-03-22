@@ -21,7 +21,4 @@ typedef void (^BLOCK)(HHDateModel *model);
                          title:(NSString *)title
               completeCallback:(BLOCK)completeCallback;
 
-- (void)showCustomDatePickerWithCompleteCallback:(BLOCK)completeCallback;
-
-
 @end

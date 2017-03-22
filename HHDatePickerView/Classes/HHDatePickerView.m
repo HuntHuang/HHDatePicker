@@ -31,8 +31,6 @@
 
 @implementation HHDatePickerView
 
-@synthesize currentSelDate = _currentSelDate;
-
 #pragma mark - Public
 - (void)showDatePickerWithYear:(BOOL)showYear
                          month:(BOOL)showMonth
@@ -45,8 +43,10 @@
                                                       day:showDay];
     self.choseTitle = title;
     self.dateBlock = completeCallback;
-    [self loadBeginView];
-    [self setupDatePicker];
+    if (!_currentSelDate)
+    {
+        _currentSelDate = [NSDate date];
+    }
     NSDate *lastDate = [self dateWithString:self.lastDate];
     if (self.lastDate.length && lastDate)
     {
@@ -55,16 +55,14 @@
     }
 }
 
-- (void)showCustomDatePickerWithCompleteCallback:(BLOCK)completeCallback
+- (void)layoutSubviews
 {
-    self.dateBlock = completeCallback;
-    self.dateManager = [[CustomDateManager alloc] init];
-    
+    self.backgroundView.frame = CGRectMake(0, 0, IPhoneWidth, IPhoneHeight);
     self.mainView.frame = CGRectMake(0, IPhoneHeight, IPhoneWidth, 330);
-    self.OKBtn.frame = CGRectMake(IPhoneWidth - 60, 5, 50, 30);
-    self.titleLabel.frame = CGRectMake(0, 5, IPhoneWidth, 30);
+    self.cancelBtn.frame = CGRectMake(5, 0, 50, 30);
+    self.OKBtn.frame = CGRectMake(IPhoneWidth - 60, 0, 50, 30);
+    self.titleLabel.frame = CGRectMake(0, 0, IPhoneWidth, 30);
     self.pickerView.frame = CGRectMake(0, 25, IPhoneWidth, 330);
-    
     __weak __typeof(self)weakSelf = self;
     [UIView animateWithDuration:0.5 animations:^{
         weakSelf.mainView.frame = CGRectMake(0, IPhoneHeight - 330, IPhoneWidth, 330);
@@ -72,41 +70,6 @@
 }
 
 #pragma mark - Private
-- (void)loadBeginView
-{
-    self.backgroundView.frame = CGRectMake(0, 0, IPhoneWidth, IPhoneHeight);
-    self.mainView.frame = CGRectMake(0, IPhoneHeight, IPhoneWidth, 330);
-    self.cancelBtn.frame = CGRectMake(5, 5, 50, 30);
-    self.OKBtn.frame = CGRectMake(IPhoneWidth - 60, 5, 50, 30);
-    self.titleLabel.frame = CGRectMake(0, 5, IPhoneWidth, 30);
-}
-
-- (void)setupDatePicker
-{
-    if (!_currentSelDate)
-    {
-        _currentSelDate = [NSDate date];
-    }
-    if ([self.dateManager isMemberOfClass:[HHDateManager class]])
-    {
-        UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 25, IPhoneWidth, 330)];
-        [datePicker addTarget:self action:@selector(onChangeDate:) forControlEvents:UIControlEventValueChanged];
-        datePicker.datePickerMode = UIDatePickerModeDate;
-        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
-        datePicker.locale = locale;
-        [_mainView addSubview:datePicker];
-        _datePicker = datePicker;
-    }
-    else
-    {
-        self.pickerView.frame = CGRectMake(0, 25, IPhoneWidth, 330);
-    }
-    __weak __typeof(self)weakSelf = self;
-    [UIView animateWithDuration:0.5 animations:^{
-        weakSelf.mainView.frame = CGRectMake(0, IPhoneHeight - 330, IPhoneWidth, 330);
-    }];
-}
-
 - (NSDate *)dateWithString:(NSString *)str
 {
     if (str.length == 0) return nil;
@@ -116,10 +79,7 @@
 #pragma mark - Action
 - (void)onClickedOK
 {
-    HHDateModel *model = [[HHDateModel alloc] init];
-    model.year = [self.dateManager getYearNumberStringWithCurSelDate :_currentSelDate];
-    model.month = [self.dateManager getMonthNumberStringWithCurSelDate:_currentSelDate];
-    model.day = [self.dateManager getDayNumberStringWithCurSelDate  :_currentSelDate];
+    HHDateModel *model = [self.dateManager getDateModelWithCurSelDate:_currentSelDate];
     __weak __typeof(self)weakSelf = self;
     [UIView animateWithDuration:0.5 animations:^{
         weakSelf.mainView.frame = CGRectMake(0, IPhoneHeight, IPhoneWidth, 330);
@@ -156,7 +116,7 @@
     return [self.dateManager numberOfComponentsInPickerView];
 }
 
--(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     return [self.dateManager dateArrayCountWithComponent:component];
 }
@@ -169,7 +129,7 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    [self.dateManager pickerViewdidSelectRow:row inComponent:component];
+    [self.dateManager pickerViewdidSelectRow:row inComponent:component inView:pickerView];
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
