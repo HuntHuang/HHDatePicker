@@ -96,8 +96,8 @@
     else
     {
         HHDatePickerView *pickerView = [[HHDatePickerView alloc] initWithFrame:CGRectMake(0, 0, IPhoneWidth, IPhoneHeight)];
-        [pickerView showDatePickerWithYear:self.showYear month:self.showMonth day:self.showDay title:@"请选择日期" completeCallback:^(HHDateModel *model) {
-            NSString *dateString = [NSString stringWithFormat:@"%@-%@-%@", model.year, model.month, model.day];
+        [pickerView showDatePickerWithYear:self.showYear month:self.showMonth day:self.showDay lastDate:sender.titleLabel.text completeCallback:^(HHDateModel *model) {
+            NSString *dateString = [self getDateStringWithYear:self.showYear month:self.showMonth day:self.showDay model:model];
             NSString *msg = [NSString stringWithFormat:@"这是你选择的日期: \n%@", dateString];
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:msg message:@"" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"style:UIAlertActionStyleDefault handler:nil];
@@ -107,6 +107,23 @@
         }];
         [self.view addSubview:pickerView];
     }
+}
+
+- (NSString *)getDateStringWithYear:(BOOL)showYear
+                              month:(BOOL)showMonth
+                                day:(BOOL)showDay
+                              model:(HHDateModel *)model
+{
+    NSString *opinion = [NSString stringWithFormat:@"%@%@%@", showYear?@"Y":@"N", showMonth?@"Y":@"N", showDay?@"Y":@"N"];
+    NSDictionary *dic = @{
+                          @"YYY": [NSString stringWithFormat:@"%@-%@-%@", model.year, model.month, model.day] ?: @"",
+                          @"YYN": [NSString stringWithFormat:@"%@-%@", model.year, model.month] ?: @"",
+                          @"NYY": [NSString stringWithFormat:@"%@-%@", model.month, model.day] ?: @"",
+                          @"YNN": [NSString stringWithFormat:@"%@", model.year] ?: @"",
+                          @"NYN": [NSString stringWithFormat:@"%@", model.month] ?: @"",
+                          @"NNY": [NSString stringWithFormat:@"%@", model.day] ?: @""
+                          };
+    return [dic objectForKey:opinion];
 }
 
 - (UIButton *)button

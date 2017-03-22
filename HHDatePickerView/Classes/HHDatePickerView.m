@@ -68,13 +68,25 @@
 {
     if (string.length == 0) return nil;
     NSString *opinion = [NSString stringWithFormat:@"%@%@%@", showYear?@"Y":@"N", showMonth?@"Y":@"N", showDay?@"Y":@"N"];
-    NSDictionary *dic = @{@"YYY": [[NSDate hh_dateFormatterWithFormatter:@"yyyy-MM-dd"] dateFromString:string],
-                          @"YYN": [[NSDate hh_dateFormatterWithFormatter:@"yyyy-MM"] dateFromString:string],
-                          @"NYY": [[NSDate hh_dateFormatterWithFormatter:@"MM-dd"] dateFromString:string],
-                          @"YNN": [[NSDate hh_dateFormatterWithFormatter:@"yyyy"] dateFromString:string],
-                          @"NYN": [[NSDate hh_dateFormatterWithFormatter:@"MM"] dateFromString:string],
-                          @"NNY": [[NSDate hh_dateFormatterWithFormatter:@"dd"] dateFromString:string]};
-    return [dic objectForKey:opinion];
+    NSDictionary *dic = @{
+                          @"YYY": [[NSDate hh_dateFormatterWithFormatter:@"yyyy-MM-dd"] dateFromString:string] ?: @"",
+                          @"YYN": [[NSDate hh_dateFormatterWithFormatter:@"yyyy-MM"] dateFromString:string] ?: @"",
+                          @"NYY": [[NSDate hh_dateFormatterWithFormatter:@"MM-dd"] dateFromString:string] ?: @"",
+                          @"YNN": [[NSDate hh_dateFormatterWithFormatter:@"yyyy"] dateFromString:string] ?: @"",
+                          @"NYN": [[NSDate hh_dateFormatterWithFormatter:@"MM"] dateFromString:string] ?: @"",
+                          @"NNY": [[NSDate hh_dateFormatterWithFormatter:@"dd"] dateFromString:string] ?: @""
+                          };
+    if ([[dic objectForKey:opinion] isKindOfClass:[NSString class]])
+    {
+        if ([[dic objectForKey:opinion] isEqualToString:@""])
+        {
+            return nil;
+        }
+    }
+    else
+    {
+        return [dic objectForKey:opinion];
+    }
 }
 
 #pragma mark - Action

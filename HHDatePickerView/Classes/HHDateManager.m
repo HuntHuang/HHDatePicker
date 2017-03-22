@@ -43,9 +43,9 @@
     NSMutableArray *yearMutableArray  = [[NSMutableArray alloc] initWithCapacity:0];
     NSMutableArray *monthMutableArray = [[NSMutableArray alloc] initWithCapacity:0];
     
-    NSInteger currentYear  = [[[NSDate hh_dateFormatterWithFormatter:@"yyyy"] stringFromDate:[NSDate date]] integerValue];
-    [yearMutableArray addObject:@"9999年"];
-    for (int i = currentYear; i < MAXIMUM_YEAR; i++)
+//    NSInteger currentYear  = [[[NSDate hh_dateFormatterWithFormatter:@"yyyy"] stringFromDate:[NSDate date]] integerValue];
+//    [yearMutableArray addObject:@"9999年"];
+    for (int i = MINIMUM_YEAR; i < MAXIMUM_YEAR; i++)
     {
         [yearMutableArray addObject:[NSString stringWithFormat:@"%04d年", i]];
     }
@@ -61,9 +61,11 @@
 - (void)setupDatePickViewWithCurrentSelDate:(NSDate *)date
                                      inView:(UIPickerView *)pickerView
 {
-    _yearRow = 1;
+//    NSInteger currentYear  = [[[NSDate hh_dateFormatterWithFormatter:@"yyyy"] stringFromDate:[NSDate date]] integerValue];
+//    _yearRow  = [[[NSDate hh_dateFormatterWithFormatter:@"yyyy"] stringFromDate:date] integerValue] - currentYear + 1;
+    _yearRow  = [[[NSDate hh_dateFormatterWithFormatter:@"yyyy"] stringFromDate:date] integerValue] - MINIMUM_YEAR;
     _monthRow = [[[NSDate hh_dateFormatterWithFormatter:@"MM"] stringFromDate:date] integerValue] - 1;
-    _dayRow = [[[NSDate hh_dateFormatterWithFormatter:@"dd"] stringFromDate:date] integerValue] - 1;
+    _dayRow   = [[[NSDate hh_dateFormatterWithFormatter:@"dd"] stringFromDate:date] integerValue] - 1;
     
     [pickerView selectRow:_yearRow  inComponent:0 animated:NO];
     [pickerView selectRow:_monthRow inComponent:1 animated:NO];
