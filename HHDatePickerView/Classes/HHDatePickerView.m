@@ -15,7 +15,6 @@
 
 @interface HHDatePickerView()<UIPickerViewDelegate, UIPickerViewDataSource>
 
-@property (nonatomic, copy) NSString *choseTitle;
 @property (nonatomic, strong) NSDate *currentSelDate;
 @property (nonatomic, strong) HHDateManager *dateManager;
 @property (nonatomic, weak) UIView *backgroundView;
@@ -23,9 +22,7 @@
 @property (nonatomic, weak) UILabel *titleLabel;
 @property (nonatomic, weak) UIButton *OKBtn;
 @property (nonatomic, weak) UIButton *cancelBtn;
-@property (nonatomic, weak) UIDatePicker *datePicker;
 @property (nonatomic, weak) UIPickerView *pickerView;
-@property (nonatomic, copy) NSString *lastDate;
 
 @end
 
@@ -35,23 +32,17 @@
 - (void)showDatePickerWithYear:(BOOL)showYear
                          month:(BOOL)showMonth
                            day:(BOOL)showDay
-                         title:(NSString *)title
+                      lastDate:(NSString *)lastDate
               completeCallback:(BLOCK)completeCallback
 {
     self.dateManager = [HHDateManager configModelWithYear:showYear
                                                     month:showMonth
                                                       day:showDay];
-    self.choseTitle = title;
     self.dateBlock = completeCallback;
+    _currentSelDate = [self dateWithString:lastDate year:showYear month:showMonth day:showDay];
     if (!_currentSelDate)
     {
         _currentSelDate = [NSDate date];
-    }
-    NSDate *lastDate = [self dateWithString:self.lastDate];
-    if (self.lastDate.length && lastDate)
-    {
-        [self.datePicker setDate:lastDate animated:YES];
-        _currentSelDate = lastDate;
     }
 }
 
@@ -70,10 +61,20 @@
 }
 
 #pragma mark - Private
-- (NSDate *)dateWithString:(NSString *)str
+- (NSDate *)dateWithString:(NSString *)string
+                      year:(BOOL)showYear
+                     month:(BOOL)showMonth
+                       day:(BOOL)showDay
 {
-    if (str.length == 0) return nil;
-    return [[NSDate hh_dateFormatterWithFormatter:@"yyyy-MM-dd"] dateFromString:str];
+    if (string.length == 0) return nil;
+    NSString *opinion = [NSString stringWithFormat:@"%@%@%@", showYear?@"Y":@"N", showMonth?@"Y":@"N", showDay?@"Y":@"N"];
+    NSDictionary *dic = @{@"YYY": [[NSDate hh_dateFormatterWithFormatter:@"yyyy-MM-dd"] dateFromString:string],
+                          @"YYN": [[NSDate hh_dateFormatterWithFormatter:@"yyyy-MM"] dateFromString:string],
+                          @"NYY": [[NSDate hh_dateFormatterWithFormatter:@"MM-dd"] dateFromString:string],
+                          @"YNN": [[NSDate hh_dateFormatterWithFormatter:@"yyyy"] dateFromString:string],
+                          @"NYN": [[NSDate hh_dateFormatterWithFormatter:@"MM"] dateFromString:string],
+                          @"NNY": [[NSDate hh_dateFormatterWithFormatter:@"dd"] dateFromString:string]};
+    return [dic objectForKey:opinion];
 }
 
 #pragma mark - Action
@@ -85,7 +86,6 @@
         weakSelf.mainView.frame = CGRectMake(0, IPhoneHeight, IPhoneWidth, 330);
     } completion:^(BOOL finished) {
         NSString *dateString = [NSString stringWithFormat:@"%@-%@-%@", model.year, model.month, model.day];
-        self.lastDate = [self dateWithString:dateString];
         if (weakSelf.dateBlock) {
             weakSelf.dateBlock(model);
             weakSelf.dateBlock = nil;
@@ -102,12 +102,6 @@
     } completion:^(BOOL finished) {
         [weakSelf removeFromSuperview];
     }];
-}
-
-- (void)onChangeDate:(UIDatePicker *)sender
-{
-    NSDate *pickerDate = [sender date];
-    _currentSelDate = pickerDate;
 }
 
 #pragma mark - UIPickerViewDataSource
@@ -181,7 +175,7 @@
     {
         UILabel *titleLabel = [[UILabel alloc] init];
         titleLabel.textAlignment = NSTextAlignmentCenter;
-        titleLabel.text = self.choseTitle;
+        titleLabel.text = @"请选择日期";
         [self.mainView addSubview:titleLabel];
         _titleLabel = titleLabel;
     }
@@ -238,7 +232,6 @@
         UIPickerView *pickerView = [[UIPickerView alloc] init];
         pickerView.delegate = self;
         pickerView.dataSource = self;
-        _currentSelDate = [NSDate date];
         [self.dateManager setupDatePickViewWithCurrentSelDate:_currentSelDate inView:pickerView];
         [self.mainView addSubview:pickerView];
         _pickerView = pickerView;

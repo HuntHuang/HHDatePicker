@@ -18,7 +18,7 @@ typedef void (^BLOCK)(HHDateModel *model);
 - (void)showDatePickerWithYear:(BOOL)showYear
                          month:(BOOL)showMonth
                            day:(BOOL)showDay
-                         title:(NSString *)title
+                      lastDate:(NSString *)lastDate
               completeCallback:(BLOCK)completeCallback;
 
 @end

@@ -16,6 +16,7 @@
 @property (nonatomic, assign) BOOL showYear;
 @property (nonatomic, assign) BOOL showMonth;
 @property (nonatomic, assign) BOOL showDay;
+@property (nonatomic, weak) UIButton *button;
 
 @end
 
@@ -56,10 +57,7 @@
     [daySwitch addTarget:self action:@selector(onClickDaySwith:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:daySwitch];
     
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(150, 250, 150, 100)];
-    [button setTitle:@"Let\'s Go" forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(onClickAllDatePicker) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+    self.button.frame = CGRectMake(150, 250, 150, 100);
 }
 
 - (void)onClickYearSwith:(UISwitch *)sender
@@ -77,7 +75,7 @@
     self.showDay = sender.on;
 }
 
-- (void)onClickAllDatePicker
+- (void)onClickAllDatePicker:(UIButton *)sender
 {
     NSString *msg = nil;
     if (self.showYear && self.showDay && self.showMonth == NO)
@@ -99,14 +97,29 @@
     {
         HHDatePickerView *pickerView = [[HHDatePickerView alloc] initWithFrame:CGRectMake(0, 0, IPhoneWidth, IPhoneHeight)];
         [pickerView showDatePickerWithYear:self.showYear month:self.showMonth day:self.showDay title:@"请选择日期" completeCallback:^(HHDateModel *model) {
-            NSString *msg = [NSString stringWithFormat:@"这是你选择的日期: \n%@-%@-%@", model.year, model.month, model.day];
+            NSString *dateString = [NSString stringWithFormat:@"%@-%@-%@", model.year, model.month, model.day];
+            NSString *msg = [NSString stringWithFormat:@"这是你选择的日期: \n%@", dateString];
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:msg message:@"" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"style:UIAlertActionStyleDefault handler:nil];
             [alertController addAction:okAction];
             [self presentViewController:alertController animated:YES completion:nil];
+            [self.button setTitle:dateString forState:UIControlStateNormal];
         }];
         [self.view addSubview:pickerView];
     }
+}
+
+- (UIButton *)button
+{
+    if (!_button)
+    {
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(150, 250, 150, 100)];
+        [button setTitle:@"Let\'s Go" forState:UIControlStateNormal];
+        [button addTarget:self action:@selector(onClickAllDatePicker:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:button];
+        _button = button;
+    }
+    return _button;
 }
 
 @end
