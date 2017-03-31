@@ -51,24 +51,28 @@
     [self addSubview:mainView];
     _mainView = mainView;
     
-    UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    cancelBtn.frame = CGRectMake(5, 5, 50, 30);
-    [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
-    [cancelBtn addTarget:self action:@selector(onClickedCancel) forControlEvents:UIControlEventTouchUpInside];
-    [_mainView addSubview:cancelBtn];
-    
-    UIButton *OKBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    OKBtn.frame = CGRectMake(IPhoneWidth - 60, 5, 50, 30);
-    [OKBtn setTitle:@"确定" forState:UIControlStateNormal];
-    [OKBtn addTarget:self action:@selector(onClickedOK) forControlEvents:UIControlEventTouchUpInside];
-    [_mainView addSubview:OKBtn];
-    
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, IPhoneWidth, 30)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, IPhoneWidth, 50)];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.text = @"选择日期";
     [_mainView addSubview:titleLabel];
     
-    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 25, IPhoneWidth, 300)];
+    UIButton *OKBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    OKBtn.frame = CGRectMake(IPhoneWidth - 60, 0, 50, 50);
+    [OKBtn setTitle:@"确定" forState:UIControlStateNormal];
+    [OKBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [OKBtn addTarget:self action:@selector(onClickedOK) forControlEvents:UIControlEventTouchUpInside];
+    [_mainView addSubview:OKBtn];
+    
+    UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    cancelBtn.frame = CGRectMake(5, 0, 50, 50);
+    [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+    [cancelBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [cancelBtn addTarget:self action:@selector(onClickedCancel) forControlEvents:UIControlEventTouchUpInside];
+    [_mainView addSubview:cancelBtn];
+    
+    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 50, IPhoneWidth, 300)];
+    pickerView.layer.borderWidth = 1.0;
+    pickerView.layer.borderColor = [[UIColor groupTableViewBackgroundColor] CGColor];
     pickerView.delegate = self;
     pickerView.dataSource = self;
     [self.dateManager setupDatePickView:pickerView];
