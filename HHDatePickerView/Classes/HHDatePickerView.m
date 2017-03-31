@@ -15,7 +15,6 @@
 
 @interface HHDatePickerView()<UIPickerViewDelegate, UIPickerViewDataSource>
 
-@property (nonatomic, strong) NSDate *currentSelDate;
 @property (nonatomic, strong) HHDateManager *dateManager;
 @property (nonatomic, weak) UIView *backgroundView;
 @property (nonatomic, weak) UIView *mainView;
@@ -35,15 +34,11 @@
                       lastDate:(NSString *)lastDate
               completeCallback:(BLOCK)completeCallback
 {
+    self.dateBlock = completeCallback;
     self.dateManager = [HHDateManager configModelWithYear:showYear
                                                     month:showMonth
                                                       day:showDay];
-    self.dateBlock = completeCallback;
-    _currentSelDate = [self dateWithString:lastDate year:showYear month:showMonth day:showDay];
-    if (!_currentSelDate)
-    {
-        _currentSelDate = [NSDate date];
-    }
+    [self.dateManager setCurrentSelDateWithLastDate:lastDate];
 }
 
 - (void)layoutSubviews
@@ -60,47 +55,22 @@
     }];
 }
 
-#pragma mark - Private
-- (NSDate *)dateWithString:(NSString *)string
-                      year:(BOOL)showYear
-                     month:(BOOL)showMonth
-                       day:(BOOL)showDay
+- (void)dealloc
 {
-    if (string.length == 0) return nil;
-    NSString *opinion = [NSString stringWithFormat:@"%@%@%@", showYear?@"Y":@"N", showMonth?@"Y":@"N", showDay?@"Y":@"N"];
-    NSDictionary *dic = @{
-                          @"YYY": [[NSDate hh_dateFormatterWithFormatter:@"yyyy-MM-dd"] dateFromString:string] ?: @"",
-                          @"YYN": [[NSDate hh_dateFormatterWithFormatter:@"yyyy-MM"] dateFromString:string] ?: @"",
-                          @"NYY": [[NSDate hh_dateFormatterWithFormatter:@"MM-dd"] dateFromString:string] ?: @"",
-                          @"YNN": [[NSDate hh_dateFormatterWithFormatter:@"yyyy"] dateFromString:string] ?: @"",
-                          @"NYN": [[NSDate hh_dateFormatterWithFormatter:@"MM"] dateFromString:string] ?: @"",
-                          @"NNY": [[NSDate hh_dateFormatterWithFormatter:@"dd"] dateFromString:string] ?: @""
-                          };
-    if ([[dic objectForKey:opinion] isKindOfClass:[NSString class]])
-    {
-        if ([[dic objectForKey:opinion] isEqualToString:@""])
-        {
-            return nil;
-        }
-    }
-    else
-    {
-        return [dic objectForKey:opinion];
-    }
+    _dateBlock = nil;
+    _dateManager = nil;
 }
 
 #pragma mark - Action
 - (void)onClickedOK
 {
-    HHDateModel *model = [self.dateManager getDateModelWithCurSelDate:_currentSelDate];
     __weak __typeof(self)weakSelf = self;
     [UIView animateWithDuration:0.5 animations:^{
         weakSelf.mainView.frame = CGRectMake(0, IPhoneHeight, IPhoneWidth, 330);
     } completion:^(BOOL finished) {
-        NSString *dateString = [NSString stringWithFormat:@"%@-%@-%@", model.year, model.month, model.day];
-        if (weakSelf.dateBlock) {
-            weakSelf.dateBlock(model);
-            weakSelf.dateBlock = nil;
+        if (weakSelf.dateBlock)
+        {
+            weakSelf.dateBlock([self.dateManager getDateModel]);
         }
         [weakSelf removeFromSuperview];
     }];
@@ -244,7 +214,7 @@
         UIPickerView *pickerView = [[UIPickerView alloc] init];
         pickerView.delegate = self;
         pickerView.dataSource = self;
-        [self.dateManager setupDatePickViewWithCurrentSelDate:_currentSelDate inView:pickerView];
+        [self.dateManager setupDatePickView:pickerView];
         [self.mainView addSubview:pickerView];
         _pickerView = pickerView;
     }

@@ -16,21 +16,26 @@
 @property (nonatomic, strong) NSArray *yearArray;
 @property (nonatomic, strong) NSArray *dayArray;
 
-@property (nonatomic, copy) NSString *year;
-@property (nonatomic, copy) NSString *month;
-@property (nonatomic, copy) NSString *day;
+@property (nonatomic, copy) NSString *yearString;
+@property (nonatomic, copy) NSString *monthString;
+@property (nonatomic, copy) NSString *dayString;
 
 @property (nonatomic, assign) NSInteger yearRow;
 @property (nonatomic, assign) NSInteger monthRow;
 @property (nonatomic, assign) NSInteger dayRow;
 
+@property (nonatomic, strong) NSDate *currentDate;
+
+// 多态匹配model
 + (HHDateManager *)configModelWithYear:(BOOL)showYear
                                  month:(BOOL)showMonth
                                    day:(BOOL)showDay;
 
+// 设置上一次选择的日期
+- (void)setCurrentSelDateWithLastDate:(NSString *)lastDate;
+
 // 设置首次展示的日期
-- (void)setupDatePickViewWithCurrentSelDate:(NSDate *)date
-                                     inView:(UIPickerView *)pickerView;
+- (void)setupDatePickView:(UIPickerView *)pickerView;
 
 // 设置pickerView的列数
 - (NSInteger)numberOfComponentsInPickerView;
@@ -45,15 +50,15 @@
 - (void)pickerViewdidSelectRow:(NSInteger)row inComponent:(NSInteger)component inView:(UIPickerView *)pickerView;
 
 // 获取年份
-- (NSString *)getYearNumberStringWithCurSelDate:(NSDate *)date;
+- (NSString *)getYearNumberString;
 
 // 获取月份
-- (NSString *)getMonthNumberStringWithCurSelDate:(NSDate *)date;
+- (NSString *)getMonthNumberString;
 
 // 获取日份
-- (NSString *)getDayNumberStringWithCurSelDate:(NSDate *)date;
+- (NSString *)getDayNumberString;
 
-- (HHDateModel *)getDateModelWithCurSelDate:(NSDate *)date;
+- (HHDateModel *)getDateModel;
 @end
 
 @interface HHYearAndMonthManager : HHDateManager

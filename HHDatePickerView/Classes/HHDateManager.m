@@ -14,20 +14,6 @@
 
 @implementation HHDateManager
 
-+ (HHDateManager *)configModelWithYear:(BOOL)showYear
-                                 month:(BOOL)showMonth
-                                   day:(BOOL)showDay
-{
-    NSString *str = [NSString stringWithFormat:@"%@%@%@", showYear?@"Y":@"N", showMonth?@"Y":@"N", showDay?@"Y":@"N"];
-    NSDictionary *dic = @{@"YYY": [[HHDateManager alloc] init],
-                          @"YYN": [[HHYearAndMonthManager alloc] init],
-                          @"NYY": [[HHMonthAndDayManager alloc] init],
-                          @"YNN": [[HHOnlyYearManager alloc] init],
-                          @"NYN": [[HHOnlyMonthManager alloc] init],
-                          @"NNY": [[HHOnlyDayManager alloc] init]};
-    return [dic objectForKey:str];
-}
-
 - (instancetype)init
 {
     self = [super init];
@@ -43,8 +29,6 @@
     NSMutableArray *yearMutableArray  = [[NSMutableArray alloc] initWithCapacity:0];
     NSMutableArray *monthMutableArray = [[NSMutableArray alloc] initWithCapacity:0];
     
-//    NSInteger currentYear  = [[[NSDate hh_dateFormatterWithFormatter:@"yyyy"] stringFromDate:[NSDate date]] integerValue];
-//    [yearMutableArray addObject:@"9999年"];
     for (int i = MINIMUM_YEAR; i < MAXIMUM_YEAR; i++)
     {
         [yearMutableArray addObject:[NSString stringWithFormat:@"%04d年", i]];
@@ -58,14 +42,31 @@
     self.monthArray = monthMutableArray;
 }
 
-- (void)setupDatePickViewWithCurrentSelDate:(NSDate *)date
-                                     inView:(UIPickerView *)pickerView
++ (HHDateManager *)configModelWithYear:(BOOL)showYear
+                                 month:(BOOL)showMonth
+                                   day:(BOOL)showDay
 {
-//    NSInteger currentYear  = [[[NSDate hh_dateFormatterWithFormatter:@"yyyy"] stringFromDate:[NSDate date]] integerValue];
-//    _yearRow  = [[[NSDate hh_dateFormatterWithFormatter:@"yyyy"] stringFromDate:date] integerValue] - currentYear + 1;
-    _yearRow  = [[[NSDate hh_dateFormatterWithFormatter:@"yyyy"] stringFromDate:date] integerValue] - MINIMUM_YEAR;
-    _monthRow = [[[NSDate hh_dateFormatterWithFormatter:@"MM"] stringFromDate:date] integerValue] - 1;
-    _dayRow   = [[[NSDate hh_dateFormatterWithFormatter:@"dd"] stringFromDate:date] integerValue] - 1;
+    NSString *str = [NSString stringWithFormat:@"%@%@%@", showYear?@"Y":@"N", showMonth?@"Y":@"N", showDay?@"Y":@"N"];
+    NSDictionary *dic = @{@"YYY": [[HHDateManager alloc] init],
+                          @"YYN": [[HHYearAndMonthManager alloc] init],
+                          @"NYY": [[HHMonthAndDayManager alloc] init],
+                          @"YNN": [[HHOnlyYearManager alloc] init],
+                          @"NYN": [[HHOnlyMonthManager alloc] init],
+                          @"NNY": [[HHOnlyDayManager alloc] init]};
+    return [dic objectForKey:str];
+}
+
+- (void)setCurrentSelDateWithLastDate:(NSString *)lastDate
+{
+    NSDate *date = [[NSDate hh_dateFormatterWithFormatter:@"yyyy-MM-dd"] dateFromString:lastDate];
+    self.currentDate = (date == nil || lastDate.length == 0) ? [NSDate date] : date;
+}
+
+- (void)setupDatePickView:(UIPickerView *)pickerView
+{
+    _yearRow  = [[[NSDate hh_dateFormatterWithFormatter:@"yyyy"] stringFromDate:self.currentDate] integerValue] - MINIMUM_YEAR;
+    _monthRow = [[[NSDate hh_dateFormatterWithFormatter:@"MM"] stringFromDate:self.currentDate] integerValue] - 1;
+    _dayRow   = [[[NSDate hh_dateFormatterWithFormatter:@"dd"] stringFromDate:self.currentDate] integerValue] - 1;
     
     [pickerView selectRow:_yearRow  inComponent:0 animated:NO];
     [pickerView selectRow:_monthRow inComponent:1 animated:NO];
@@ -113,17 +114,17 @@
 {
     if (component == 0)
     {
-        self.year  = self.yearArray[row];
+        self.yearString  = self.yearArray[row];
         _yearRow = row;
     }
     else if (component == 1)
     {
-        self.month = self.monthArray[row];
+        self.monthString = self.monthArray[row];
         _monthRow = row;
     }
     else if (component == 2)
     {
-        self.day = self.dayArray[row];
+        self.dayString = self.dayArray[row];
         _dayRow = row;
     }
     if (component == 0 || component == 1)
@@ -137,48 +138,48 @@
     [pickerView reloadComponent:2];
 }
 
-- (NSString *)getYearNumberStringWithCurSelDate:(NSDate *)date
+- (NSString *)getYearNumberString
 {
-    if (!self.year)
+    if (!self.yearString)
     {
-        self.year = [[NSDate hh_dateFormatterWithFormatter:@"yyyy年"] stringFromDate:date];
+        self.yearString = [[NSDate hh_dateFormatterWithFormatter:@"yyyy年"] stringFromDate:self.currentDate];
     }
     
-    NSMutableString *yearStr = [[NSMutableString alloc] initWithString:self.year];
+    NSMutableString *yearStr = [[NSMutableString alloc] initWithString:self.yearString];
     [yearStr deleteCharactersInRange:NSMakeRange(4, 1)];
     return yearStr;
 }
 
-- (NSString *)getMonthNumberStringWithCurSelDate:(NSDate *)date
+- (NSString *)getMonthNumberString
 {
-    if (!self.month)
+    if (!self.monthString)
     {
-        self.month = [[NSDate hh_dateFormatterWithFormatter:@"MM月"] stringFromDate:date];
+        self.monthString = [[NSDate hh_dateFormatterWithFormatter:@"MM月"] stringFromDate:self.currentDate];
     }
     
-    NSMutableString *monthStr = [[NSMutableString alloc] initWithString:self.month];
+    NSMutableString *monthStr = [[NSMutableString alloc] initWithString:self.monthString];
     [monthStr deleteCharactersInRange:NSMakeRange(2, 1)];
     return monthStr;
 }
 
-- (NSString *)getDayNumberStringWithCurSelDate:(NSDate *)date
+- (NSString *)getDayNumberString
 {
-    if (!self.day)
+    if (!self.dayString)
     {
-        self.day = [[NSDate hh_dateFormatterWithFormatter:@"dd日"] stringFromDate:date];
+        self.dayString = [[NSDate hh_dateFormatterWithFormatter:@"dd日"] stringFromDate:self.currentDate];
     }
     
-    NSMutableString *dayStr = [[NSMutableString alloc] initWithString:self.day];
+    NSMutableString *dayStr = [[NSMutableString alloc] initWithString:self.dayString];
     [dayStr deleteCharactersInRange:NSMakeRange(2, 1)];
     return dayStr;
 }
 
-- (HHDateModel *)getDateModelWithCurSelDate:(NSDate *)date
+- (HHDateModel *)getDateModel
 {
     HHDateModel *model = [[HHDateModel alloc] init];
-    model.year = [self getYearNumberStringWithCurSelDate:date];
-    model.month = [self getMonthNumberStringWithCurSelDate:date];
-    model.day = [self getDayNumberStringWithCurSelDate:date];
+    model.year = [self getYearNumberString];
+    model.month = [self getMonthNumberString];
+    model.day = [self getDayNumberString];
     return model;
 }
 
@@ -242,42 +243,26 @@
 
 @implementation HHYearAndMonthManager
 
-- (instancetype)init
+- (void)setCurrentSelDateWithLastDate:(NSString *)lastDate
 {
-    self = [super init];
-    if (self)
-    {
-        NSMutableArray *yearMutableArray  = [[NSMutableArray alloc] initWithCapacity:0];
-        NSMutableArray *monthMutableArray = [[NSMutableArray alloc] initWithCapacity:0];
-        for (int i = MINIMUM_YEAR; i < MAXIMUM_YEAR; i++)
-        {
-            [yearMutableArray addObject:[NSString stringWithFormat:@"%04d年", i]];
-        }
-        for (int k = 1; k < 13; k++)
-        {
-            [monthMutableArray addObject:[NSString stringWithFormat:@"%02d月", k]];
-        }
-        self.yearArray  = yearMutableArray;
-        self.monthArray = monthMutableArray;
-    }
-    return self;
+    NSDate *date = [[NSDate hh_dateFormatterWithFormatter:@"yyyy-MM"] dateFromString:lastDate];
+    self.currentDate = (date == nil || lastDate.length == 0) ? [NSDate date] : date;
 }
 
-- (void)setupDatePickViewWithCurrentSelDate:(NSDate *)date
-                                     inView:(UIPickerView *)pickerView
+- (void)setupDatePickView:(UIPickerView *)pickerView
 {
-    NSInteger yearRow  = [[[NSDate hh_dateFormatterWithFormatter:@"yyyy"] stringFromDate:date] integerValue] - MINIMUM_YEAR;
-    NSInteger monthRow = [[[NSDate hh_dateFormatterWithFormatter:@"MM"]   stringFromDate:date] integerValue] - 1;
+    NSInteger yearRow  = [[[NSDate hh_dateFormatterWithFormatter:@"yyyy"] stringFromDate:self.currentDate] integerValue] - MINIMUM_YEAR;
+    NSInteger monthRow = [[[NSDate hh_dateFormatterWithFormatter:@"MM"]   stringFromDate:self.currentDate] integerValue] - 1;
     
     [pickerView selectRow:yearRow  inComponent:0 animated:NO];
     [pickerView selectRow:monthRow inComponent:1 animated:NO];
 }
 
-- (HHDateModel *)getDateModelWithCurSelDate:(NSDate *)date
+- (HHDateModel *)getDateModel
 {
     HHDateModel *model = [[HHDateModel alloc] init];
-    model.year = [super getYearNumberStringWithCurSelDate:date];
-    model.month = [super getMonthNumberStringWithCurSelDate:date];
+    model.year = [super getYearNumberString];
+    model.month = [super getMonthNumberString];
     model.day = @"";
     return model;
 }
@@ -315,33 +300,38 @@
 {
     if (component == 0)
     {
-        self.year  = self.yearArray[row];
+        self.yearString  = self.yearArray[row];
     }
     else
     {
-        self.month = self.monthArray[row];
+        self.monthString = self.monthArray[row];
     }
 }
 @end
 
 @implementation HHMonthAndDayManager
 
-- (void)setupDatePickViewWithCurrentSelDate:(NSDate *)date
-                                     inView:(UIPickerView *)pickerView
+- (void)setCurrentSelDateWithLastDate:(NSString *)lastDate
 {
-    self.monthRow = [[[NSDate hh_dateFormatterWithFormatter:@"MM"]   stringFromDate:date] integerValue] - 1;
-    self.dayRow   = [[[NSDate hh_dateFormatterWithFormatter:@"dd"]   stringFromDate:date] integerValue] - 1;
+    NSDate *date = [[NSDate hh_dateFormatterWithFormatter:@"MM-dd"] dateFromString:lastDate];
+    self.currentDate = (date == nil || lastDate.length == 0) ? [NSDate date] : date;
+}
+
+- (void)setupDatePickView:(UIPickerView *)pickerView
+{
+    self.monthRow = [[[NSDate hh_dateFormatterWithFormatter:@"MM"] stringFromDate:self.currentDate] integerValue] - 1;
+    self.dayRow   = [[[NSDate hh_dateFormatterWithFormatter:@"dd"] stringFromDate:self.currentDate] integerValue] - 1;
     
     [pickerView selectRow:self.monthRow inComponent:0 animated:NO];
     [pickerView selectRow:self.dayRow  inComponent:1 animated:NO];
 }
 
-- (HHDateModel *)getDateModelWithCurSelDate:(NSDate *)date
+- (HHDateModel *)getDateModel
 {
     HHDateModel *model = [[HHDateModel alloc] init];
     model.year = @"";
-    model.month = [super getMonthNumberStringWithCurSelDate:date];
-    model.day = [super getDayNumberStringWithCurSelDate:date];
+    model.month = [super getMonthNumberString];
+    model.day = [super getDayNumberString];
     return model;
 }
 
@@ -378,12 +368,12 @@
 {
     if (component == 0)
     {
-        self.month = self.monthArray[row];
+        self.monthString = self.monthArray[row];
         self.monthRow = row;
     }
     else
     {
-        self.day = self.dayArray[row];
+        self.dayString = self.dayArray[row];
         self.dayRow = row;
     }
     if (component == 0)
@@ -438,33 +428,23 @@
 
 @implementation HHOnlyYearManager
 
-- (instancetype)init
+- (void)setCurrentSelDateWithLastDate:(NSString *)lastDate
 {
-    self = [super init];
-    if (self)
-    {
-        NSMutableArray *yearMutableArray  = [[NSMutableArray alloc] initWithCapacity:0];
-        for (int i = MINIMUM_YEAR; i < MAXIMUM_YEAR; i++)
-        {
-            [yearMutableArray addObject:[NSString stringWithFormat:@"%04d年", i]];
-        }
-        self.yearArray  = yearMutableArray;
-    }
-    return self;
+    NSDate *date = [[NSDate hh_dateFormatterWithFormatter:@"yyyy"] dateFromString:lastDate];
+    self.currentDate = (date == nil || lastDate.length == 0) ? [NSDate date] : date;
 }
 
-- (void)setupDatePickViewWithCurrentSelDate:(NSDate *)date
-                                     inView:(UIPickerView *)pickerView;
+- (void)setupDatePickView:(UIPickerView *)pickerView
 {
-    NSInteger yearRow = [[[NSDate hh_dateFormatterWithFormatter:@"yyyy"] stringFromDate:date] integerValue] - MINIMUM_YEAR;
+    NSInteger yearRow = [[[NSDate hh_dateFormatterWithFormatter:@"yyyy"] stringFromDate:self.currentDate] integerValue] - MINIMUM_YEAR;
     
     [pickerView selectRow:yearRow inComponent:0 animated:NO];
 }
 
-- (HHDateModel *)getDateModelWithCurSelDate:(NSDate *)date
+- (HHDateModel *)getDateModel
 {
     HHDateModel *model = [[HHDateModel alloc] init];
-    model.year = [super getYearNumberStringWithCurSelDate:date];
+    model.year = [super getYearNumberString];
     model.month = @"";
     model.day = @"";
     return model;
@@ -487,26 +467,31 @@
 
 - (void)pickerViewdidSelectRow:(NSInteger)row inComponent:(NSInteger)component inView:(UIPickerView *)pickerView
 {
-    self.year = self.yearArray[row];
+    self.yearString = self.yearArray[row];
 }
 @end
 
 
 @implementation HHOnlyMonthManager
 
-- (void)setupDatePickViewWithCurrentSelDate:(NSDate *)date
-                                     inView:(UIPickerView *)pickerView
+- (void)setCurrentSelDateWithLastDate:(NSString *)lastDate
 {
-    NSInteger monthRow = [[[NSDate hh_dateFormatterWithFormatter:@"MM"] stringFromDate:date] integerValue] - 1;
+    NSDate *date = [[NSDate hh_dateFormatterWithFormatter:@"MM"] dateFromString:lastDate];
+    self.currentDate = (date == nil || lastDate.length == 0) ? [NSDate date] : date;
+}
+
+- (void)setupDatePickView:(UIPickerView *)pickerView
+{
+    NSInteger monthRow = [[[NSDate hh_dateFormatterWithFormatter:@"MM"] stringFromDate:self.currentDate] integerValue] - 1;
     
     [pickerView selectRow:monthRow inComponent:0 animated:NO];
 }
 
-- (HHDateModel *)getDateModelWithCurSelDate:(NSDate *)date
+- (HHDateModel *)getDateModel
 {
     HHDateModel *model = [[HHDateModel alloc] init];
     model.year = @"";
-    model.month = [super getMonthNumberStringWithCurSelDate:date];
+    model.month = [super getMonthNumberString];
     model.day = @"";
     return model;
 }
@@ -528,7 +513,7 @@
 
 - (void)pickerViewdidSelectRow:(NSInteger)row inComponent:(NSInteger)component inView:(UIPickerView *)pickerView
 {
-    self.month = self.monthArray[row];
+    self.monthString = self.monthArray[row];
 }
 @end
 
@@ -550,20 +535,25 @@
     return self;
 }
 
-- (void)setupDatePickViewWithCurrentSelDate:(NSDate *)date
-                                     inView:(UIPickerView *)pickerView
+- (void)setCurrentSelDateWithLastDate:(NSString *)lastDate
 {
-    NSInteger dayRow = [[[NSDate hh_dateFormatterWithFormatter:@"dd"] stringFromDate:date] integerValue] - 1;
+    NSDate *date = [[NSDate hh_dateFormatterWithFormatter:@"dd"] dateFromString:lastDate];
+    self.currentDate = (date == nil || lastDate.length == 0) ? [NSDate date] : date;
+}
+
+- (void)setupDatePickView:(UIPickerView *)pickerView
+{
+    NSInteger dayRow = [[[NSDate hh_dateFormatterWithFormatter:@"dd"] stringFromDate:self.currentDate] integerValue] - 1;
     
     [pickerView selectRow:dayRow inComponent:0 animated:NO];
 }
 
-- (HHDateModel *)getDateModelWithCurSelDate:(NSDate *)date
+- (HHDateModel *)getDateModel
 {
     HHDateModel *model = [[HHDateModel alloc] init];
     model.year = @"";
     model.month = @"";
-    model.day = [super getDayNumberStringWithCurSelDate:date];
+    model.day = [super getDayNumberString];
     return model;
 }
 
@@ -584,7 +574,7 @@
 
 - (void)pickerViewdidSelectRow:(NSInteger)row inComponent:(NSInteger)component inView:(UIPickerView *)pickerView
 {
-    self.day = self.dayArray[row];
+    self.dayString = self.dayArray[row];
 }
 @end
 
