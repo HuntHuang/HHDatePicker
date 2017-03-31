@@ -16,12 +16,7 @@
 @interface HHDatePickerView()<UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic, strong) HHDateManager *dateManager;
-@property (nonatomic, weak) UIView *backgroundView;
 @property (nonatomic, weak) UIView *mainView;
-@property (nonatomic, weak) UILabel *titleLabel;
-@property (nonatomic, weak) UIButton *OKBtn;
-@property (nonatomic, weak) UIButton *cancelBtn;
-@property (nonatomic, weak) UIPickerView *pickerView;
 
 @end
 
@@ -43,12 +38,42 @@
 
 - (void)layoutSubviews
 {
-    self.backgroundView.frame = CGRectMake(0, 0, IPhoneWidth, IPhoneHeight);
-    self.mainView.frame = CGRectMake(0, IPhoneHeight, IPhoneWidth, 330);
-    self.cancelBtn.frame = CGRectMake(5, 0, 50, 30);
-    self.OKBtn.frame = CGRectMake(IPhoneWidth - 60, 0, 50, 30);
-    self.titleLabel.frame = CGRectMake(0, 0, IPhoneWidth, 30);
-    self.pickerView.frame = CGRectMake(0, 25, IPhoneWidth, 330);
+    UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, IPhoneWidth, IPhoneHeight)];
+    backgroundView.backgroundColor = [UIColor blackColor];
+    backgroundView.alpha = 0.7;
+    [self addSubview:backgroundView];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickedCancel)];
+    [backgroundView addGestureRecognizer:tap];
+    
+    UIView *mainView = [[UIView alloc] initWithFrame:CGRectMake(0, IPhoneHeight, IPhoneWidth, 330)];
+    mainView.backgroundColor = [UIColor whiteColor];
+    [self addSubview:mainView];
+    _mainView = mainView;
+    
+    UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    cancelBtn.frame = CGRectMake(5, 5, 50, 30);
+    [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+    [cancelBtn addTarget:self action:@selector(onClickedCancel) forControlEvents:UIControlEventTouchUpInside];
+    [_mainView addSubview:cancelBtn];
+    
+    UIButton *OKBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    OKBtn.frame = CGRectMake(IPhoneWidth - 60, 5, 50, 30);
+    [OKBtn setTitle:@"确定" forState:UIControlStateNormal];
+    [OKBtn addTarget:self action:@selector(onClickedOK) forControlEvents:UIControlEventTouchUpInside];
+    [_mainView addSubview:OKBtn];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 5, IPhoneWidth, 30)];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.text = @"选择日期";
+    [_mainView addSubview:titleLabel];
+    
+    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 25, IPhoneWidth, 300)];
+    pickerView.delegate = self;
+    pickerView.dataSource = self;
+    [self.dateManager setupDatePickView:pickerView];
+    [_mainView addSubview:pickerView];
+    
     __weak __typeof(self)weakSelf = self;
     [UIView animateWithDuration:0.5 animations:^{
         weakSelf.mainView.frame = CGRectMake(0, IPhoneHeight - 330, IPhoneWidth, 330);
@@ -138,86 +163,4 @@
     return pickerLabel;
 }
 
-#pragma mark - getter
-- (UIView *)mainView
-{
-    if (!_mainView)
-    {
-        UIView *mainView = [[UIView alloc] init];
-        mainView.backgroundColor = [UIColor whiteColor];
-        [self addSubview:mainView];
-        _mainView = mainView;
-    }
-    return _mainView;
-}
-
-- (UILabel *)titleLabel
-{
-    if (!_titleLabel)
-    {
-        UILabel *titleLabel = [[UILabel alloc] init];
-        titleLabel.textAlignment = NSTextAlignmentCenter;
-        titleLabel.text = @"请选择日期";
-        [self.mainView addSubview:titleLabel];
-        _titleLabel = titleLabel;
-    }
-    return _titleLabel;
-}
-
-- (UIButton *)OKBtn
-{
-    if (!_OKBtn)
-    {
-        UIButton *OKBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        OKBtn.frame = CGRectMake(IPhoneWidth - 60, 5, 50, 30);
-        [OKBtn setTitle:@"OK" forState:UIControlStateNormal];
-        [OKBtn addTarget:self action:@selector(onClickedOK) forControlEvents:UIControlEventTouchUpInside];
-        [self.mainView addSubview:OKBtn];
-        _OKBtn = OKBtn;
-    }
-    return _OKBtn;
-}
-
-- (UIButton *)cancelBtn
-{
-    if (!_cancelBtn)
-    {
-        UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        cancelBtn.frame = CGRectMake(5, 5, 50, 30);
-        [cancelBtn setTitle:@"Cancel" forState:UIControlStateNormal];
-        [cancelBtn addTarget:self action:@selector(onClickedCancel) forControlEvents:UIControlEventTouchUpInside];
-        [self.mainView addSubview:cancelBtn];
-        _cancelBtn = cancelBtn;
-    }
-    return _cancelBtn;
-}
-
-- (UIView *)backgroundView
-{
-    if (!_backgroundView)
-    {
-        UIView *backgroundView = [[UIView alloc] init];
-        backgroundView.backgroundColor = [UIColor blackColor];
-        backgroundView.alpha = 0.7;
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onClickedCancel)];
-        [backgroundView addGestureRecognizer:tap];
-        [self addSubview:backgroundView];
-        _backgroundView = backgroundView;
-    }
-    return _backgroundView;
-}
-
-- (UIPickerView *)pickerView
-{
-    if (!_pickerView)
-    {
-        UIPickerView *pickerView = [[UIPickerView alloc] init];
-        pickerView.delegate = self;
-        pickerView.dataSource = self;
-        [self.dateManager setupDatePickView:pickerView];
-        [self.mainView addSubview:pickerView];
-        _pickerView = pickerView;
-    }
-    return _pickerView;
-}
 @end
