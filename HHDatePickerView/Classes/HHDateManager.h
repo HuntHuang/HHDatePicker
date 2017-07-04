@@ -16,15 +16,9 @@
 @property (nonatomic, strong) NSArray *yearArray;
 @property (nonatomic, strong) NSArray *dayArray;
 
-@property (nonatomic, copy) NSString *yearString;
-@property (nonatomic, copy) NSString *monthString;
-@property (nonatomic, copy) NSString *dayString;
-
-@property (nonatomic, assign) NSInteger yearRow;
-@property (nonatomic, assign) NSInteger monthRow;
-@property (nonatomic, assign) NSInteger dayRow;
-
 @property (nonatomic, strong) NSDate *currentDate;
+
+@property (nonatomic, weak) UIPickerView *pickView;
 
 // 多态匹配model
 + (HHDateManager *)configModelWithYear:(BOOL)showYear
